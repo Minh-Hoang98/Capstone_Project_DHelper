@@ -18,7 +18,7 @@ import org.hibernate.annotations.GenericGenerator;
 @Table(name = "location")
 public class LocationEntity {
 	@Id
-	@GenericGenerator(name = "idLocation", strategy = "com.supportmycode.model.IdLocationGenerator")
+	@GenericGenerator(name = "idLocation", strategy = "com.fpt.edu.DomanticHelper.generator.IdLocationGenerator")
 	@Column(name = "idLocation")
 	private String idLocation;
 	@Column(name ="country")
