@@ -19,6 +19,7 @@ public class IdLocationGenerator implements IdentifierGenerator {
 
 	public Serializable generate(SharedSessionContractImplementor session, Object object) throws HibernateException {
 		// TODO Auto-generated method stub
+	
 		int value = new IdLocationGenerator().randomId();
 		if (value < 10) {
 			return "LOC00"+String.valueOf(value) ;
