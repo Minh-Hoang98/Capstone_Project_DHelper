@@ -1,4 +1,5 @@
-Tên đề tài: DHelper
+Tên đề tài: DHelper (domestic helper)
+
 Tên nhóm: GroupHight
 
 Thành Viên: - Nguyễn Minh Vũ
