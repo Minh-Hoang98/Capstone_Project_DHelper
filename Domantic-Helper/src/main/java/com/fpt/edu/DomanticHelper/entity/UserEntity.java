@@ -2,16 +2,20 @@ package com.fpt.edu.DomanticHelper.entity;
 
 import java.util.Date;
 
+import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name="user")
 public class UserEntity {
 	
 	@Id
+	@GenericGenerator(name = "idUser", strategy = "com.fpt.edu.DomanticHelper.generator.IdUserEntityGenerator")
 	@Column(name="id")
 	private String id;
 	

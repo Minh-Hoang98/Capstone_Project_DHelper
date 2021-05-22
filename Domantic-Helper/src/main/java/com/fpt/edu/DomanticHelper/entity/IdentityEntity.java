@@ -23,32 +23,44 @@ public class IdentityEntity {
 	@Id
 	@Column(name = "idIdentity")
 	private String idIdentity;
+	
 	@Column(name = "image")
 	private String image;
+	
 	@Column(name = "firstName")
 	private String firstName;
+	
 	@Column(name = "lastName")
 	private String lastName;
+	
 	@Column(name = "nickName")
 	private String nickName;
+	
 	@Column(name = "gender")
 	private String gender;
+	
 	@Column(name = "dob")
 	private Date dob;	
+	
 	@Column(name = "nationality")
 	private String nationality;
+	
 	@Column(name = "religion")
 	private String religion;
+	
 	@Column(name = "nativeCountry")
 	private String nativeCountry;
+	
 	@ManyToOne 
 	@JoinColumn(name = "idLocation")
 	private LocationEntity locationWork;
 
 	@Column(name = "identityCharacteristics")
 	private String identityCharacteristics;
+	
 	@Column(name = "dateOfIssue")
 	private Date dateOfIssue;
+	
 	@ManyToOne 
 	@JoinColumn(name = "idLocation")
 	private LocationEntity locationHome;

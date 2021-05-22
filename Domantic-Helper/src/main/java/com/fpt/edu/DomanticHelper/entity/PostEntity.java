@@ -5,9 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="post")
-public class Post {
+@Entity
+@Table(name="post")
+public class PostEntity {
+	
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
@@ -18,12 +21,24 @@ public class Post {
     @Column(name = "tile")
     private double tile;
     
-    
     @Column(name = "content")
     private double content;
     
     @Column(name = "image")
     private double image;
+    
+	public PostEntity() {
+		super();
+	}
+
+	public PostEntity(Long id, String iduser, double tile, double content, double image) {
+		super();
+		this.id = id;
+		this.iduser = iduser;
+		this.tile = tile;
+		this.content = content;
+		this.image = image;
+	}
 
 	public Long getId() {
 		return id;
@@ -70,9 +85,5 @@ public class Post {
 		return "Post [id=" + id + ", iduser=" + iduser + ", tile=" + tile + ", content=" + content + ", image=" + image
 				+ "]";
 	}
-    
-    
-    
- 
 	
 }

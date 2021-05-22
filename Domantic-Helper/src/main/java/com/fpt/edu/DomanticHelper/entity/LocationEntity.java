@@ -4,6 +4,7 @@ package com.fpt.edu.DomanticHelper.entity;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
+
 @Entity
 @Table(name = "location")
 public class LocationEntity {
@@ -21,8 +23,10 @@ public class LocationEntity {
 	@GenericGenerator(name = "idLocation", strategy = "com.fpt.edu.DomanticHelper.generator.IdLocationGenerator")
 	@Column(name = "idLocation")
 	private String idLocation;
+	
 	@Column(name ="country")
 	private String country;
+	
 	@Column(name ="province")
 	private String province;
 	@Column(name ="district")
@@ -33,6 +37,11 @@ public class LocationEntity {
 	private String group;
 	@Column(name ="numberHome")
 	private String numberHome;
+	
+	@OneToMany(mappedBy="locationHome",
+			   cascade= {CascadeType.PERSIST, CascadeType.MERGE,
+						 CascadeType.DETACH, CascadeType.REFRESH})
+	private List<IdentityEntity> identities;
 	
 	public LocationEntity() {
 		super();
