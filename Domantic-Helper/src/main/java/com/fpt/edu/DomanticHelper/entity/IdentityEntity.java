@@ -1,25 +1,20 @@
 
 package com.fpt.edu.DomanticHelper.entity;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "identity")
 public class IdentityEntity {
+	
 	@Id
 	@Column(name = "idIdentity")
 	private String idIdentity;
@@ -39,7 +34,7 @@ public class IdentityEntity {
 	@Column(name = "gender")
 	private String gender;
 	
-	@Column(name = "dob")
+	@Column(name = "day_of_birth")
 	private Date dob;	
 	
 	@Column(name = "nationality")

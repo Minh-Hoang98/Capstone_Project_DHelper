@@ -19,7 +19,7 @@ public class UserEntityServiceImpl implements UserEntityService {
 	}
 
 	@Override
-	public UserEntity findById(String theId) {
+	public UserEntity findById(Long theId) {
 		Optional<UserEntity> result = userEntityReponsitory.findById(theId);
 
 		UserEntity theUser = null;
@@ -40,7 +40,7 @@ public class UserEntityServiceImpl implements UserEntityService {
 	}
 
 	@Override
-	public void deleteById(String theId) {
+	public void deleteById(Long theId) {
 		userEntityReponsitory.deleteById(theId);
 	}
 

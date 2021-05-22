@@ -31,7 +31,7 @@ public class UserEntityController {
 	// add mapping for GET /user/{userId}
 	
 	@GetMapping("/users/{userId}")
-	public UserEntity getUser(@PathVariable String userId) {
+	public UserEntity getUser(@PathVariable Long userId) {
 		
 		UserEntity theUser = userEntityService.findById(userId);
 		
@@ -47,7 +47,7 @@ public class UserEntityController {
 	@PostMapping("/users")
 	public UserEntity addUser(@RequestBody UserEntity theUser) {
 		
-		theUser.setId("");	
+		theUser.setId((long) 0);	
 		userEntityService.save(theUser);
 		
 		return theUser;
@@ -66,7 +66,7 @@ public class UserEntityController {
 	// add mapping for DELETE /employees/{employeeId} - delete employee
 	
 	@DeleteMapping("/users/{userId}")
-	public String deleteUser(@PathVariable String userId) {
+	public String deleteUser(@PathVariable Long userId) {
 		
 		UserEntity tempUserEntity = userEntityService.findById(userId);
 		
