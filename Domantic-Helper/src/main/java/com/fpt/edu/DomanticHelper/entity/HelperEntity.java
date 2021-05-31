@@ -11,16 +11,22 @@ public class HelperEntity extends UserEntity{
 	@Column(name = "id_job")
 	private Long idJob;
 	
+	@Column
 	private String education;
 	
+	@Column
 	private float expectedMonthlySalary;
 	
+	@Column
 	private String preferredLocation;
 	
+	@Column
 	private String yearsOfExperience;
 	
+	@Column
 	private String skills;
 	
+	@Column
 	private String status;
 
 	public HelperEntity() {

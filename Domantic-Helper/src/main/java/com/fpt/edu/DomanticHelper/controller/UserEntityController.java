@@ -9,14 +9,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fpt.edu.DomanticHelper.entity.UserEntity;
 import com.fpt.edu.DomanticHelper.service.UserEntityService;
 
 @RestController
-@RequestMapping("/api")
 public class UserEntityController {
 
 	@Autowired
@@ -31,7 +29,7 @@ public class UserEntityController {
 	// add mapping for GET /user/{userId}
 	
 	@GetMapping("/users/{userId}")
-	public UserEntity getUser(@PathVariable Long userId) {
+	public UserEntity getUser(@PathVariable int userId) {
 		
 		UserEntity theUser = userEntityService.findById(userId);
 		
@@ -47,13 +45,13 @@ public class UserEntityController {
 	@PostMapping("/users")
 	public UserEntity addUser(@RequestBody UserEntity theUser) {
 		
-		theUser.setId((long) 0);	
+		theUser.setId(0);	
 		userEntityService.save(theUser);
 		
 		return theUser;
 	}
 	
-	// add mapping for PUT /employees - update existing employee
+	// add mapping for PUT /users - update existing users
 	
 	@PutMapping("/users")
 	public UserEntity updateUser(@RequestBody UserEntity theUser) {
@@ -63,10 +61,10 @@ public class UserEntityController {
 		return theUser;
 	}
 	
-	// add mapping for DELETE /employees/{employeeId} - delete employee
+	// add mapping for DELETE /users/{userId} - delete users
 	
 	@DeleteMapping("/users/{userId}")
-	public String deleteUser(@PathVariable Long userId) {
+	public String deleteUser(@PathVariable int userId) {
 		
 		UserEntity tempUserEntity = userEntityService.findById(userId);
 		

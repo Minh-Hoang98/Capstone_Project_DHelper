@@ -3,21 +3,13 @@ package com.fpt.edu.DomanticHelper.entity;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import org.hibernate.annotations.GenericGenerator;
-
+import javax.persistence.*;
 
 @Entity
 @Table(name = "location")
 public class LocationEntity {
 	@Id
-	@GenericGenerator(name = "idLocation", strategy = "com.fpt.edu.DomanticHelper.generator.IdLocationGenerator")
+	@GeneratedValue
 	@Column(name = "idLocation")
 	private String idLocation;
 	
