@@ -8,9 +8,9 @@ public interface UserEntityService {
 
 	public List<UserEntity> findAll();
 
-	public UserEntity findById(int theId);
+	public UserEntity findById(Long theId);
 
 	public void save(UserEntity theUser);
 
-	public void deleteById(int theId);
+	public void deleteById(Long theId);
 }

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.fpt.edu.DomanticHelper.entity.UserEntity;
 
 @Repository
-public interface UserEntityReponsitory extends JpaRepository<UserEntity, Integer>{
+public interface UserEntityReponsitory extends JpaRepository<UserEntity, Long>{
 
 }

@@ -11,6 +11,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -20,7 +24,7 @@ public class UserEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	private int id;
+	private Long id;
 	
 	@Column(name="user_name")
 	private String userName;
@@ -44,9 +48,13 @@ public class UserEntity {
 	private String typeOfEmp;
 	
 	@Column(name="date_start")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateStart;
 	
 	@Column(name="date_off")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateOff;
 	
 	@Column(name="acommodation")
@@ -81,7 +89,7 @@ public class UserEntity {
 		super();
 	}
 
-	public UserEntity(int id, String userName, String password, String phone, String email, String status,
+	public UserEntity(Long id, String userName, String password, String phone, String email, String status,
 			int numberChild, String typeOfEmp, Date dateStart, Date dateOff, String acommodation, String livingArr,
 			float houseSize, String note, String care, String cooking, String houseKeeping, int salary) {
 		super();
@@ -105,11 +113,11 @@ public class UserEntity {
 		this.salary = salary;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int theid) {
+	public void setId(Long theid) {
 		this.id = theid;
 	}
 

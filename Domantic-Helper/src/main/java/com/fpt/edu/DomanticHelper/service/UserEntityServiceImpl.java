@@ -17,8 +17,8 @@ public class UserEntityServiceImpl implements UserEntityService {
 	private static ArrayList<UserEntity> users =  new ArrayList<UserEntity>();
 	
 	static {
-		users.add(new UserEntity(1, "MrCss", "123", "0938442112", "hoang003pro@gmail.com","Yeu em", 2, "Edu", new Date(), new Date(), "acd", "ass", 2, "123", "123", "123", "123", 2));
-		users.add(new UserEntity(1, "ANH", "12555", "09384423332", "hoang005pro@gmail.com","Yeu anh", 2, "Edu", new Date(), new Date(), "acd", "ass", 2, "123", "123", "123", "123", 2));
+		users.add(new UserEntity(1L, "MrCss", "123", "0938442112", "hoang003pro@gmail.com","Yeu em", 2, "Edu", new Date(), new Date(), "acd", "ass", 2, "123", "123", "123", "123", 2));
+		users.add(new UserEntity(2L, "ANH", "12555", "09384423332", "hoang005pro@gmail.com","Yeu anh", 2, "Edu", new Date(), new Date(), "acd", "ass", 2, "123", "123", "123", "123", 2));
 	}
 
 	@Autowired
@@ -30,7 +30,7 @@ public class UserEntityServiceImpl implements UserEntityService {
 	}
 
 	@Override
-	public UserEntity findById(int theId) {
+	public UserEntity findById(Long theId) {
 		Optional<UserEntity> result = userEntityReponsitory.findById(theId);
 
 		UserEntity theUser = null;
@@ -51,7 +51,7 @@ public class UserEntityServiceImpl implements UserEntityService {
 	}
 
 	@Override
-	public void deleteById(int theId) {
+	public void deleteById(Long theId) {
 		userEntityReponsitory.deleteById(theId);
 	}
 
