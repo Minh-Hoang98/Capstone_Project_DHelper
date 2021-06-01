@@ -17,8 +17,8 @@ public class UserEntityServiceImpl implements UserEntityService {
 	private static ArrayList<UserEntity> users =  new ArrayList<UserEntity>();
 	
 	static {
-		users.add(new UserEntity(1L, "MrCss", "123", "0938442112", "hoang003pro@gmail.com","Yeu em", 2, "Edu", new Date(), new Date(), "acd", "ass", 2, "123", "123", "123", "123", 2));
-		users.add(new UserEntity(2L, "ANH", "12555", "09384423332", "hoang005pro@gmail.com","Yeu anh", 2, "Edu", new Date(), new Date(), "acd", "ass", 2, "123", "123", "123", "123", 2));
+		users.add(new UserEntity(1, "MrCss", "123", "0938442112", "hoang003pro@gmail.com","Yeu em", 2, "Edu", new Date(), new Date(), "acd", "ass", 2, "123", "123", "123", "123", 2));
+		users.add(new UserEntity(2, "ANH", "12555", "09384423332", "hoang005pro@gmail.com","Yeu anh", 2, "Edu", new Date(), new Date(), "acd", "ass", 2, "123", "123", "123", "123", 2));
 	}
 
 	@Autowired
@@ -30,19 +30,24 @@ public class UserEntityServiceImpl implements UserEntityService {
 	}
 
 	@Override
-	public UserEntity findById(Long theId) {
-		Optional<UserEntity> result = userEntityReponsitory.findById(theId);
+	public UserEntity findById(int theId) {
+//		Optional<UserEntity> result = userEntityReponsitory.findById(theId);
+//
+//		UserEntity theUser = null;
+//
+//		if (result.isPresent()) {
+//			theUser = result.get();
+//		} else {
+//			// we didn't find the employee
+//			throw new RuntimeException("Did not find User id - " + theId);
+//		}
 
-		UserEntity theUser = null;
-
-		if (result.isPresent()) {
-			theUser = result.get();
-		} else {
-			// we didn't find the employee
-			throw new RuntimeException("Did not find User id - " + theId);
+		for(UserEntity user: users) {
+			if(user.getId() == theId) {
+				return user;
+			}
 		}
-
-		return theUser;
+		return null;
 	}
 
 	@Override
@@ -51,7 +56,7 @@ public class UserEntityServiceImpl implements UserEntityService {
 	}
 
 	@Override
-	public void deleteById(Long theId) {
+	public void deleteById(int theId) {
 		userEntityReponsitory.deleteById(theId);
 	}
 

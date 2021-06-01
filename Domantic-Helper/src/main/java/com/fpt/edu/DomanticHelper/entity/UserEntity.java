@@ -24,7 +24,7 @@ public class UserEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	private Long id;
+	private int id;
 	
 	@Column(name="user_name")
 	private String userName;
@@ -89,7 +89,7 @@ public class UserEntity {
 		super();
 	}
 
-	public UserEntity(Long id, String userName, String password, String phone, String email, String status,
+	public UserEntity(int id, String userName, String password, String phone, String email, String status,
 			int numberChild, String typeOfEmp, Date dateStart, Date dateOff, String acommodation, String livingArr,
 			float houseSize, String note, String care, String cooking, String houseKeeping, int salary) {
 		super();
@@ -113,11 +113,11 @@ public class UserEntity {
 		this.salary = salary;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long theid) {
+	public void setId(int theid) {
 		this.id = theid;
 	}
 
