@@ -11,26 +11,33 @@ import javax.persistence.*;
 public class LocationEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long idLocation;
+	@Column(name = "id_location")
+	private Long id;
 	
-	@Column(length = 100)
+	@Column(name = "country",length = 100)
 	private String country;
 	
-	@Column(length = 100)
+	@Column(name = "province",length = 100)
 	private String province;
 	
-	@Column(length = 100)
+	@Column(name = "district",length = 100)
 	private String district;
 	
-	@Column(length = 100)
+	@Column(name = "sub_district",length = 100)
 	private String subDistrict;
 	
-	@Column(length = 100)
+	@Column(name = "group_location",length = 100)
 	private String groupLocation;
 	
-	@Column
+	@Column(name = "number_home",length = 100)
 	private int numberHome;
+	
+	@OneToMany(mappedBy="workLocation",cascade= CascadeType.ALL)
+	private List<PostEntity> posts;
+	
 
+	@OneToMany(mappedBy="currentLocation",cascade= CascadeType.ALL)
+	private List<UserEntity> users;
 	
 	@OneToMany(mappedBy="locationHome",cascade= CascadeType.ALL)
 	private List<IdentityEntity> identities;
@@ -41,7 +48,7 @@ public class LocationEntity {
 	public LocationEntity(Long idLocation, String country, String province, String district, String subDistrict,
 			String group, int numberHome) {
 		super();
-		this.idLocation = idLocation;
+		this.id = idLocation;
 		this.country = country;
 		this.province = province;
 		this.district = district;
@@ -50,10 +57,10 @@ public class LocationEntity {
 		this.numberHome = numberHome;
 	}
 	public Long getIdLocation() {
-		return idLocation;
+		return id;
 	}
 	public void setIdLocation(Long idLocation) {
-		this.idLocation = idLocation;
+		this.id = idLocation;
 	}
 	public String getCountry() {
 		return country;
@@ -93,7 +100,7 @@ public class LocationEntity {
 	}
 	@Override
 	public String toString() {
-		return "LocationEntity [idLocation=" + idLocation + ", country=" + country + ", province=" + province
+		return "LocationEntity [idLocation=" + id + ", country=" + country + ", province=" + province
 				+ ", district=" + district + ", subDistrict=" + subDistrict + ", group=" + groupLocation + ", numberHome="
 				+ numberHome + "]";
 	}

@@ -52,7 +52,7 @@ public class IdentityEntity {
 	@JoinColumn(name = "locationId")
 	private LocationEntity locationHome;
 
-	@OneToOne(mappedBy = "IdentityEntity")
+	@OneToOne(mappedBy = "identityEntity")
     private UserEntity user;
 	
 	public IdentityEntity() {
