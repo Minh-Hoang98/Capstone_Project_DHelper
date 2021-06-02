@@ -1,6 +1,10 @@
 package com.fpt.edu.DomanticHelper.entity;
 
+import java.util.Date;
+
 import javax.persistence.*;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="post")
@@ -20,13 +24,33 @@ public class PostEntity {
     private double content;
     
     @Column(name = "image")
-    private double image;
+    private String image;
+    
+    @Column(name = "salary")
+    private float salary;
+    
+    @Column(name="date_start")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date dateStart;
+	
+	@Column(name="date_off")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date dateOff;
+	
+	@Column(name = "status")
+	private String status;
+	
+	@ManyToOne
+	@JoinColumn(name = "location_work")
+	private LocationEntity workLocation;
     
 	public PostEntity() {
 		super();
 	}
 
-	public PostEntity(Long id, String iduser, double tile, double content, double image) {
+	public PostEntity(Long id, String iduser, double tile, double content, String image) {
 		super();
 		this.id = id;
 		this.iduser = iduser;
@@ -67,11 +91,11 @@ public class PostEntity {
 		this.content = content;
 	}
 
-	public double getImage() {
+	public String getImage() {
 		return image;
 	}
 
-	public void setImage(double image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 

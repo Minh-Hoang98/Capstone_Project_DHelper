@@ -5,52 +5,62 @@ import java.util.List;
 
 import javax.persistence.*;
 
+
 @Entity
 @Table(name = "location")
 public class LocationEntity {
 	@Id
-	@GeneratedValue
-	@Column(name = "idLocation")
-	private String idLocation;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_location")
+	private Long id;
 	
-	@Column(name ="country")
+	@Column(name = "country",length = 100)
 	private String country;
 	
-	@Column(name ="province")
+	@Column(name = "province",length = 100)
 	private String province;
-	@Column(name ="district")
-	private String district;
-	@Column(name ="subDistrict")
-	private String subDistrict;
-	@Column(name ="group")
-	private String group;
-	@Column(name ="numberHome")
-	private String numberHome;
 	
-	@OneToMany(mappedBy="locationHome",
-			   cascade= {CascadeType.PERSIST, CascadeType.MERGE,
-						 CascadeType.DETACH, CascadeType.REFRESH})
+	@Column(name = "district",length = 100)
+	private String district;
+	
+	@Column(name = "sub_district",length = 100)
+	private String subDistrict;
+	
+	@Column(name = "group_location",length = 100)
+	private String groupLocation;
+	
+	@Column(name = "number_home",length = 100)
+	private int numberHome;
+	
+	@OneToMany(mappedBy="workLocation",cascade= CascadeType.ALL)
+	private List<PostEntity> posts;
+	
+
+	@OneToMany(mappedBy="currentLocation",cascade= CascadeType.ALL)
+	private List<UserEntity> users;
+	
+	@OneToMany(mappedBy="locationHome",cascade= CascadeType.ALL)
 	private List<IdentityEntity> identities;
 	
 	public LocationEntity() {
 		super();
 	}
-	public LocationEntity(String idLocation, String country, String province, String district, String subDistrict,
-			String group, String numberHome) {
+	public LocationEntity(Long idLocation, String country, String province, String district, String subDistrict,
+			String group, int numberHome) {
 		super();
-		this.idLocation = idLocation;
+		this.id = idLocation;
 		this.country = country;
 		this.province = province;
 		this.district = district;
 		this.subDistrict = subDistrict;
-		this.group = group;
+		this.groupLocation = group;
 		this.numberHome = numberHome;
 	}
-	public String getIdLocation() {
-		return idLocation;
+	public Long getIdLocation() {
+		return id;
 	}
-	public void setIdLocation(String idLocation) {
-		this.idLocation = idLocation;
+	public void setIdLocation(Long idLocation) {
+		this.id = idLocation;
 	}
 	public String getCountry() {
 		return country;
@@ -77,21 +87,21 @@ public class LocationEntity {
 		this.subDistrict = subDistrict;
 	}
 	public String getGroup() {
-		return group;
+		return groupLocation;
 	}
 	public void setGroup(String group) {
-		this.group = group;
+		this.groupLocation = group;
 	}
-	public String getNumberHome() {
+	public int getNumberHome() {
 		return numberHome;
 	}
-	public void setNumberHome(String numberHome) {
+	public void setNumberHome(int numberHome) {
 		this.numberHome = numberHome;
 	}
 	@Override
 	public String toString() {
-		return "LocationEntity [idLocation=" + idLocation + ", country=" + country + ", province=" + province
-				+ ", district=" + district + ", subDistrict=" + subDistrict + ", group=" + group + ", numberHome="
+		return "LocationEntity [idLocation=" + id + ", country=" + country + ", province=" + province
+				+ ", district=" + district + ", subDistrict=" + subDistrict + ", group=" + groupLocation + ", numberHome="
 				+ numberHome + "]";
 	}
 	
