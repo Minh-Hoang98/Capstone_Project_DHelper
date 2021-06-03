@@ -12,6 +12,7 @@ import javax.persistence.*;
 public class IdentityEntity {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id_dentity")
 	private int idIdentity;
 	
@@ -77,8 +78,6 @@ public class IdentityEntity {
 		this.dateOfIssue = dateOfIssue;
 		this.locationHome = locationHome;
 	}
-
-
 
 	public int getIdIdentity() {
 		return idIdentity;
@@ -183,6 +182,22 @@ public class IdentityEntity {
 	public void setLocationHome(LocationEntity locationHome) {
 		this.locationHome = locationHome;
 	}
-	
-	
+
+	public UserEntity getUser() {
+		return user;
+	}
+
+	public void setUser(UserEntity user) {
+		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "IdentityEntity [idIdentity=" + idIdentity + ", image=" + image + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", nickName=" + nickName + ", gender=" + gender + ", dob=" + dob
+				+ ", nationality=" + nationality + ", religion=" + religion + ", nativeCountry=" + nativeCountry
+				+ ", identityCharacteristics=" + identityCharacteristics + ", dateOfIssue=" + dateOfIssue
+				+ ", locationHome=" + locationHome + "]";
+	}
+
 }

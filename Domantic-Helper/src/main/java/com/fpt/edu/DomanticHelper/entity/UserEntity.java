@@ -43,6 +43,9 @@ public class UserEntity {
 
 	@Column(name = "status")
 	private String status;
+	
+	@Column(name = "role")
+	private String role;
 
 	@ManyToOne
 	@JoinColumn(name = "location_current")
@@ -51,13 +54,19 @@ public class UserEntity {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "identity_entity_id")
 	private IdentityEntity identityEntity;
+	
+	@OneToOne(mappedBy = "user_emp")
+    private Employee employee;
+	
+	@OneToOne(mappedBy = "users_helper")
+    private HelperJob helperJobs;
 
 	public UserEntity() {
 		super();
 	}
 
 	public UserEntity(int id, String avatar, String userName, String password, String phone, String email,
-			String status, LocationEntity currentLocation, IdentityEntity identityEntity) {
+			String status, String role, LocationEntity currentLocation, IdentityEntity identityEntity) {
 		super();
 		this.id = id;
 		this.avatar = avatar;
@@ -66,8 +75,19 @@ public class UserEntity {
 		this.phone = phone;
 		this.email = email;
 		this.status = status;
+		this.role = role;
 		this.currentLocation = currentLocation;
 		this.identityEntity = identityEntity;
+		this.employee = employee;
+		this.helperJobs = helperJobs;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getAvatar() {
@@ -76,14 +96,6 @@ public class UserEntity {
 
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getUserName() {
@@ -126,6 +138,14 @@ public class UserEntity {
 		this.status = status;
 	}
 
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
 	public LocationEntity getCurrentLocation() {
 		return currentLocation;
 	}
@@ -142,11 +162,28 @@ public class UserEntity {
 		this.identityEntity = identityEntity;
 	}
 
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
+	}
+
+	public HelperJob getHelperJobs() {
+		return helperJobs;
+	}
+
+	public void setHelperJobs(HelperJob helperJobs) {
+		this.helperJobs = helperJobs;
+	}
+
 	@Override
 	public String toString() {
 		return "UserEntity [id=" + id + ", avatar=" + avatar + ", userName=" + userName + ", password=" + password
-				+ ", phone=" + phone + ", email=" + email + ", status=" + status + ", currentLocation="
-				+ currentLocation + ", identityEntity=" + identityEntity + "]";
+				+ ", phone=" + phone + ", email=" + email + ", status=" + status + ", role=" + role
+				+ ", currentLocation=" + currentLocation + ", identityEntity=" + identityEntity + ", employee="
+				+ employee + ", helperJobs=" + helperJobs + "]";
 	}
 
 }

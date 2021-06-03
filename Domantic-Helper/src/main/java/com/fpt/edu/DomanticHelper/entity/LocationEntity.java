@@ -29,7 +29,7 @@ public class LocationEntity {
 	@Column(name = "group_location",length = 100)
 	private String groupLocation;
 	
-	@Column(name = "number_home",length = 100)
+	@Column(name = "number_home")
 	private int numberHome;
 	
 	@OneToMany(mappedBy="workLocation",cascade= CascadeType.ALL)
@@ -38,6 +38,7 @@ public class LocationEntity {
 
 	@OneToMany(mappedBy="currentLocation",cascade= CascadeType.ALL)
 	private List<UserEntity> users;
+	
 	
 	@OneToMany(mappedBy="locationHome",cascade= CascadeType.ALL)
 	private List<IdentityEntity> identities;

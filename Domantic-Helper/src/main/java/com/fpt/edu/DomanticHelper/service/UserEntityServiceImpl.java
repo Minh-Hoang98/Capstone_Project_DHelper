@@ -8,6 +8,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fpt.edu.DomanticHelper.entity.Employee;
+import com.fpt.edu.DomanticHelper.entity.HelperJob;
 import com.fpt.edu.DomanticHelper.entity.IdentityEntity;
 import com.fpt.edu.DomanticHelper.entity.LocationEntity;
 import com.fpt.edu.DomanticHelper.entity.UserEntity;
@@ -21,10 +23,9 @@ public class UserEntityServiceImpl implements UserEntityService {
 	private static ArrayList<IdentityEntity> identities =  new ArrayList<IdentityEntity>();
 	
 	static {
-		
-		identities.add(new IdentityEntity(2,"image","Vũ", "Minh","Giáo Sư","Nam",new Date(),"Việt Nam", "Không", "Hà Tĩnh","445", new Date(), new LocationEntity()));
-		users.add(new UserEntity(1,"image", "MrCss", "123", "0938442112", "hoang003pro@gmail.com","Yeu em", new LocationEntity(), new IdentityEntity(1,"image","Hoàng", "Minh","MrCss","Nam",new Date(),"Việt Nam", "Không", "Hà Tĩnh","234", new Date(), new LocationEntity())));
-		users.add(new UserEntity(2, "image","ANH", "12555", "09384423332", "hoang005pro@gmail.com","Yeu anh", new LocationEntity(), new IdentityEntity()));
+		identities.add(new IdentityEntity(1,"image","Vũ", "Minh","Giáo Sư","Nam",new Date(),"Việt Nam", "Không", "Hà Tĩnh","445", new Date(), new LocationEntity()));
+		users.add(new UserEntity(1,"image", "MrCss", "123", "0938442112", "hoang003pro@gmail.com","Yeu em","1", new LocationEntity(), new IdentityEntity(1,"image","Hoàng", "Minh","MrCss","Nam",new Date(),"Việt Nam", "Không", "Hà Tĩnh","234", new Date(), new LocationEntity())));
+		users.add(new UserEntity(2, "image","ANH", "12555", "09384423332", "hoang005pro@gmail.com","Yeu anh","1", new LocationEntity(), new IdentityEntity()));
 	}
 
 	@Autowired

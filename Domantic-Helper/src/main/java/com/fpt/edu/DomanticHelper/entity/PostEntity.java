@@ -13,15 +13,12 @@ public class PostEntity {
 	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-	
-    @Column(name = "iduser")
-    private String iduser;
  
-    @Column(name = "tile")
-    private double tile;
+    @Column(name = "tile", length = 150)
+    private String tile;
     
-    @Column(name = "content")
-    private double content;
+    @Column(name = "content", length = 255)
+    private String content;
     
     @Column(name = "image")
     private String image;
@@ -34,10 +31,8 @@ public class PostEntity {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateStart;
 	
-	@Column(name="date_off")
-	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private Date dateOff;
+	@Column(name="day_off")
+	private String dayOff;
 	
 	@Column(name = "status")
 	private String status;
@@ -50,13 +45,18 @@ public class PostEntity {
 		super();
 	}
 
-	public PostEntity(Long id, String iduser, double tile, double content, String image) {
+	public PostEntity(Long id, String tile, String content, String image, float salary, Date dateStart, String dayOff,
+			String status, LocationEntity workLocation) {
 		super();
 		this.id = id;
-		this.iduser = iduser;
 		this.tile = tile;
 		this.content = content;
 		this.image = image;
+		this.salary = salary;
+		this.dateStart = dateStart;
+		this.dayOff = dayOff;
+		this.status = status;
+		this.workLocation = workLocation;
 	}
 
 	public Long getId() {
@@ -67,27 +67,19 @@ public class PostEntity {
 		this.id = id;
 	}
 
-	public String getIduser() {
-		return iduser;
-	}
-
-	public void setIduser(String iduser) {
-		this.iduser = iduser;
-	}
-
-	public double getTile() {
+	public String getTile() {
 		return tile;
 	}
 
-	public void setTile(double tile) {
+	public void setTile(String tile) {
 		this.tile = tile;
 	}
 
-	public double getContent() {
+	public String getContent() {
 		return content;
 	}
 
-	public void setContent(double content) {
+	public void setContent(String content) {
 		this.content = content;
 	}
 
@@ -99,10 +91,51 @@ public class PostEntity {
 		this.image = image;
 	}
 
+	public float getSalary() {
+		return salary;
+	}
+
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+
+	public Date getDateStart() {
+		return dateStart;
+	}
+
+	public void setDateStart(Date dateStart) {
+		this.dateStart = dateStart;
+	}
+
+	public String getDayOff() {
+		return dayOff;
+	}
+
+	public void setDayOff(String dayOff) {
+		this.dayOff = dayOff;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public LocationEntity getWorkLocation() {
+		return workLocation;
+	}
+
+	public void setWorkLocation(LocationEntity workLocation) {
+		this.workLocation = workLocation;
+	}
+
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", iduser=" + iduser + ", tile=" + tile + ", content=" + content + ", image=" + image
-				+ "]";
+		return "PostEntity [id=" + id + ", tile=" + tile + ", content=" + content + ", image=" + image + ", salary="
+				+ salary + ", dateStart=" + dateStart + ", dayOff=" + dayOff + ", status=" + status + ", workLocation="
+				+ workLocation + "]";
 	}
-	
+
 }
