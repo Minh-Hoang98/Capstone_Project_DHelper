@@ -31,8 +31,15 @@ public class PostEntity {
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateStart;
 	
+<<<<<<< HEAD
 	@Column(name="day_off")
 	private String dayOff;
+=======
+	@Column(name="date_off")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date dateOff;
+>>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
 	
 	@Column(name = "status")
 	private String status;
@@ -45,8 +52,12 @@ public class PostEntity {
 		super();
 	}
 
+<<<<<<< HEAD
 	public PostEntity(Long id, String tile, String content, String image, float salary, Date dateStart, String dayOff,
 			String status, LocationEntity workLocation) {
+=======
+	public PostEntity(Long id, String iduser, double tile, double content, String image) {
+>>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
 		super();
 		this.id = id;
 		this.tile = tile;

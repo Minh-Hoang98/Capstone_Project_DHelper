@@ -29,6 +29,7 @@ public class LocationEntity {
 	@Column(name = "group_location",length = 100)
 	private String groupLocation;
 	
+<<<<<<< HEAD
 	@Column(name = "number_home")
 	private int numberHome;
 	
@@ -39,6 +40,17 @@ public class LocationEntity {
 	@OneToMany(mappedBy="currentLocation",cascade= CascadeType.ALL)
 	private List<UserEntity> users;
 	
+=======
+	@Column(name = "number_home",length = 100)
+	private int numberHome;
+	
+	@OneToMany(mappedBy="workLocation",cascade= CascadeType.ALL)
+	private List<PostEntity> posts;
+	
+
+	@OneToMany(mappedBy="currentLocation",cascade= CascadeType.ALL)
+	private List<UserEntity> users;
+>>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
 	
 	@OneToMany(mappedBy="locationHome",cascade= CascadeType.ALL)
 	private List<IdentityEntity> identities;
