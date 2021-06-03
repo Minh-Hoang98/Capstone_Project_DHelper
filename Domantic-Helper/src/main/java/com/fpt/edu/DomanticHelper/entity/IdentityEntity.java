@@ -79,11 +79,6 @@ public class IdentityEntity {
 		this.locationHome = locationHome;
 	}
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
 	public int getIdIdentity() {
 		return idIdentity;
 	}

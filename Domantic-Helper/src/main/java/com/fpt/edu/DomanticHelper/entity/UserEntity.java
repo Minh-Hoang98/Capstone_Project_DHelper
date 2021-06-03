@@ -25,7 +25,6 @@ public class UserEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
-<<<<<<< HEAD
 
 	@Column(name = "avatar")
 	private String avatar;
@@ -47,10 +46,7 @@ public class UserEntity {
 	
 	@Column(name = "role")
 	private String role;
-=======
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
-
-<<<<<<< HEAD
+	
 	@ManyToOne
 	@JoinColumn(name = "location_current")
 	private LocationEntity currentLocation;
@@ -64,44 +60,14 @@ public class UserEntity {
 	
 	@OneToOne(mappedBy = "users_helper")
     private HelperJob helperJobs;
-=======
-	@Column(name = "avatar")
-	private String avatar;
-
-	@Column(name = "user_name")
-	private String userName;
-
-	@Column(name = "password")
-	private String password;
-
-	@Column(name = "phone")
-	private String phone;
-
-	@Column(name = "email")
-	private String email;
-
-	@Column(name = "status")
-	private String status;
-
-	@ManyToOne
-	@JoinColumn(name = "location_current")
-	private LocationEntity currentLocation;
-
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "identity_entity_id")
-	private IdentityEntity identityEntity;
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
 
 	public UserEntity() {
 		super();
 	}
 
 	public UserEntity(int id, String avatar, String userName, String password, String phone, String email,
-<<<<<<< HEAD
-			String status, String role, LocationEntity currentLocation, IdentityEntity identityEntity) {
-=======
-			String status, LocationEntity currentLocation, IdentityEntity identityEntity) {
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
+			String status, String role, LocationEntity currentLocation, IdentityEntity identityEntity,
+			Employee employee, HelperJob helperJobs) {
 		super();
 		this.id = id;
 		this.avatar = avatar;
@@ -110,33 +76,19 @@ public class UserEntity {
 		this.phone = phone;
 		this.email = email;
 		this.status = status;
-<<<<<<< HEAD
 		this.role = role;
 		this.currentLocation = currentLocation;
 		this.identityEntity = identityEntity;
 		this.employee = employee;
 		this.helperJobs = helperJobs;
-=======
-		this.currentLocation = currentLocation;
-		this.identityEntity = identityEntity;
 	}
 
-	public String getAvatar() {
-		return avatar;
-	}
-
-	public void setAvatar(String avatar) {
-		this.avatar = avatar;
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
-	}
-	
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
-<<<<<<< HEAD
 	}
 
 	public String getAvatar() {
@@ -145,8 +97,6 @@ public class UserEntity {
 
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
-=======
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
 	}
 
 	public String getUserName() {
@@ -189,34 +139,18 @@ public class UserEntity {
 		this.status = status;
 	}
 
-<<<<<<< HEAD
 	public String getRole() {
 		return role;
-=======
-	public LocationEntity getCurrentLocation() {
-		return currentLocation;
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
 	}
 
-<<<<<<< HEAD
 	public void setRole(String role) {
 		this.role = role;
-=======
-	public void setCurrentLocation(LocationEntity currentLocation) {
-		this.currentLocation = currentLocation;
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
 	}
 
-<<<<<<< HEAD
 	public LocationEntity getCurrentLocation() {
 		return currentLocation;
-=======
-	public IdentityEntity getIdentityEntity() {
-		return identityEntity;
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
 	}
 
-<<<<<<< HEAD
 	public void setCurrentLocation(LocationEntity currentLocation) {
 		this.currentLocation = currentLocation;
 	}
@@ -243,23 +177,13 @@ public class UserEntity {
 
 	public void setHelperJobs(HelperJob helperJobs) {
 		this.helperJobs = helperJobs;
-=======
-	public void setIdentityEntity(IdentityEntity identityEntity) {
-		this.identityEntity = identityEntity;
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
 	}
 
 	@Override
 	public String toString() {
 		return "UserEntity [id=" + id + ", avatar=" + avatar + ", userName=" + userName + ", password=" + password
-<<<<<<< HEAD
 				+ ", phone=" + phone + ", email=" + email + ", status=" + status + ", role=" + role
 				+ ", currentLocation=" + currentLocation + ", identityEntity=" + identityEntity + ", employee="
 				+ employee + ", helperJobs=" + helperJobs + "]";
-=======
-				+ ", phone=" + phone + ", email=" + email + ", status=" + status + ", currentLocation="
-				+ currentLocation + ", identityEntity=" + identityEntity + "]";
->>>>>>> branch 'master' of https://github.com/Minh-Hoang98/Capstone_Project_DHelper.git
-	}
-
+	}	
 }
