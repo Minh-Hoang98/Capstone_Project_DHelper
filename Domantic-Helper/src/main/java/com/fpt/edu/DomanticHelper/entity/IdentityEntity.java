@@ -1,11 +1,10 @@
-
 package com.fpt.edu.DomanticHelper.entity;
 
 import java.util.Date;
 
 import javax.persistence.*;
 
-
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "identity")
@@ -32,6 +31,8 @@ public class IdentityEntity {
 	private String gender;
 	
 	@Column(name = "day_of_birth")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dob;	
 	
 	@Column(name = "nationality")
@@ -47,6 +48,8 @@ public class IdentityEntity {
 	private String identityCharacteristics;
 	
 	@Column(name = "date_of_issue")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dateOfIssue;
 	
 	@ManyToOne

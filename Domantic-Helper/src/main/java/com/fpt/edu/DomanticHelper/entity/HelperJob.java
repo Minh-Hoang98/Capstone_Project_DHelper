@@ -19,9 +19,6 @@ public class HelperJob {
 	@Column(name = "number_child", length = 50)
 	private int numberChild;
 
-	@Column(name = "type_emp", length = 100)
-	private String typeOfEmp;
-
 	@Column(name = "accommodation", length = 150)
 	private String accommodation;
 
@@ -82,15 +79,13 @@ public class HelperJob {
 		super();
 	}
 
-	public HelperJob(int id, int numberChild, String typeOfEmp, String accommodation, String livingArrangement,
+	public HelperJob(int id, int numberChild, String accommodation, String livingArrangement,
 			float houseSize, String note, String care, String cooking, String houseKeeping, Date dateStart,
 			String dayOff, String educationLevel, float expectedMonthlySalary, String preferredLocation,
-			int yearOfExperience, String skills, String status, UserEntity users_helper,
-			Collection<Rate> rates_helper) {
+			int yearOfExperience, String skills, String status) {
 		super();
 		this.id = id;
 		this.numberChild = numberChild;
-		this.typeOfEmp = typeOfEmp;
 		this.accommodation = accommodation;
 		this.livingArrangement = livingArrangement;
 		this.houseSize = houseSize;
@@ -106,8 +101,6 @@ public class HelperJob {
 		this.yearOfExperience = yearOfExperience;
 		this.skills = skills;
 		this.status = status;
-		this.users_helper = users_helper;
-		this.rates_helper = rates_helper;
 	}
 
 	public int getId() {
@@ -124,14 +117,6 @@ public class HelperJob {
 
 	public void setNumberChild(int numberChild) {
 		this.numberChild = numberChild;
-	}
-
-	public String getTypeOfEmp() {
-		return typeOfEmp;
-	}
-
-	public void setTypeOfEmp(String typeOfEmp) {
-		this.typeOfEmp = typeOfEmp;
 	}
 
 	public String getAccommodation() {
@@ -272,7 +257,7 @@ public class HelperJob {
 
 	@Override
 	public String toString() {
-		return "HelperJob [id=" + id + ", numberChild=" + numberChild + ", typeOfEmp=" + typeOfEmp + ", accommodation="
+		return "HelperJob [id=" + id + ", numberChild=" + numberChild + ", accommodation="
 				+ accommodation + ", livingArrangement=" + livingArrangement + ", houseSize=" + houseSize + ", note="
 				+ note + ", care=" + care + ", cooking=" + cooking + ", houseKeeping=" + houseKeeping + ", dateStart="
 				+ dateStart + ", dayOff=" + dayOff + ", educationLevel=" + educationLevel + ", expectedMonthlySalary="

@@ -26,9 +26,6 @@ public class Employee {
 	@Column(name = "number_child", length = 50)
 	private int numberChild;
 	
-	@Column(name = "type_emp", length = 100)
-	private String typeOfEmp;
-	
 	@Column(name = "accommodation", length = 150)
 	private String accommodation;
 	
@@ -63,13 +60,11 @@ public class Employee {
 		super();
 	}
 
-	public Employee(int id, int numberChild, String typeOfEmp, String accommodation, String livingArrangement,
-			float houseSize, String note, String care, String cooking, String houseKeeping, UserEntity user_emp,
-			Collection<Rate> rates_emp) {
+	public Employee(int id, int numberChild, String accommodation, String livingArrangement,
+			float houseSize, String note, String care, String cooking, String houseKeeping) {
 		super();
 		this.id = id;
 		this.numberChild = numberChild;
-		this.typeOfEmp = typeOfEmp;
 		this.accommodation = accommodation;
 		this.livingArrangement = livingArrangement;
 		this.houseSize = houseSize;
@@ -77,8 +72,7 @@ public class Employee {
 		this.care = care;
 		this.cooking = cooking;
 		this.houseKeeping = houseKeeping;
-		this.user_emp = user_emp;
-		this.rates_emp = rates_emp;
+
 	}
 
 	public int getId() {
@@ -95,14 +89,6 @@ public class Employee {
 
 	public void setNumberChild(int numberChild) {
 		this.numberChild = numberChild;
-	}
-
-	public String getTypeOfEmp() {
-		return typeOfEmp;
-	}
-
-	public void setTypeOfEmp(String typeOfEmp) {
-		this.typeOfEmp = typeOfEmp;
 	}
 
 	public String getAccommodation() {
@@ -179,7 +165,7 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", numberChild=" + numberChild + ", typeOfEmp=" + typeOfEmp + ", accommodation="
+		return "Employee [id=" + id + ", numberChild=" + numberChild + ", accommodation="
 				+ accommodation + ", livingArrangement=" + livingArrangement + ", houseSize=" + houseSize + ", note="
 				+ note + ", care=" + care + ", cooking=" + cooking + ", houseKeeping=" + houseKeeping + ", user_emp="
 				+ user_emp + ", rates_emp=" + rates_emp + "]";

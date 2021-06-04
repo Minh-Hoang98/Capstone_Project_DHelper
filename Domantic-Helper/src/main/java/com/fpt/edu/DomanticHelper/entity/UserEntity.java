@@ -1,7 +1,5 @@
 package com.fpt.edu.DomanticHelper.entity;
 
-import java.util.Date;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,10 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "user")
@@ -63,6 +57,21 @@ public class UserEntity {
 
 	public UserEntity() {
 		super();
+	}
+
+	public UserEntity(int id, String avatar, String userName, String password, String phone, String email,
+			String status, String role, LocationEntity currentLocation, IdentityEntity identityEntity) {
+		super();
+		this.id = id;
+		this.avatar = avatar;
+		this.userName = userName;
+		this.password = password;
+		this.phone = phone;
+		this.email = email;
+		this.status = status;
+		this.role = role;
+		this.currentLocation = currentLocation;
+		this.identityEntity = identityEntity;
 	}
 
 	public UserEntity(int id, String avatar, String userName, String password, String phone, String email,
@@ -183,7 +192,6 @@ public class UserEntity {
 	public String toString() {
 		return "UserEntity [id=" + id + ", avatar=" + avatar + ", userName=" + userName + ", password=" + password
 				+ ", phone=" + phone + ", email=" + email + ", status=" + status + ", role=" + role
-				+ ", currentLocation=" + currentLocation + ", identityEntity=" + identityEntity + ", employee="
-				+ employee + ", helperJobs=" + helperJobs + "]";
+				+ ", currentLocation=" + currentLocation + ", identityEntity=" + identityEntity + "]";
 	}	
 }

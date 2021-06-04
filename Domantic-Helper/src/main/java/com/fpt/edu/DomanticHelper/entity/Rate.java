@@ -34,7 +34,6 @@ public class Rate {
     )
     private Collection<Employee> employees;
 	
-	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     // Quan hệ n-n với đối tượng ở dưới (Helper) (1 người có nhiều đánh giá)
     @JoinTable(name = "rate_helper_job", //Tạo ra một join Table tên là "rate_helper_job"
