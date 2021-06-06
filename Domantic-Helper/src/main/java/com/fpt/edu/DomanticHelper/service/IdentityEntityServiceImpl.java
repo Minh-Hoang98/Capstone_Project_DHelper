@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +16,8 @@ import com.fpt.edu.DomanticHelper.entity.LocationEntity;
 import com.fpt.edu.DomanticHelper.jpa.IdentityEntityReponsitory;
 
 @Service
-public class IdentityEntityServiceImpl implements IdentityEntityService {
+@Transactional
+public class IdentityEntityServiceImpl{
 	
 	
 	private static ArrayList<IdentityEntity> identities =  new ArrayList<IdentityEntity>();
@@ -27,12 +30,10 @@ public class IdentityEntityServiceImpl implements IdentityEntityService {
 	@Autowired
 	private IdentityEntityReponsitory identityEntityReponsitory;
 
-	@Override
 	public List<IdentityEntity> findAll() {
 		return identityEntityReponsitory.findAll();
 	}
 
-	@Override
 	public IdentityEntity findById(int theId) {
 		Optional<IdentityEntity> result = identityEntityReponsitory.findById(theId);
 
@@ -53,7 +54,6 @@ public class IdentityEntityServiceImpl implements IdentityEntityService {
 		return theIdentity;
 	}
 
-	@Override
 	public void save(IdentityEntity theUser) {
 		identityEntityReponsitory.save(theUser);
 	}

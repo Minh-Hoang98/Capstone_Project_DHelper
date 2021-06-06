@@ -5,11 +5,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.fpt.edu.DomanticHelper.entity.UserEntity;
+import com.fpt.edu.DomanticHelper.entity.LocationEntity;
 
 @Repository
-public interface UserEntityReponsitory extends JpaRepository<UserEntity, Integer>{
+public interface LocationEntityReponsitory extends JpaRepository<LocationEntity, Long>{
 
-	Optional<UserEntity> findUserEntityById(int id);
+	Optional<LocationEntity> findLocationById(Long id);
 
 }

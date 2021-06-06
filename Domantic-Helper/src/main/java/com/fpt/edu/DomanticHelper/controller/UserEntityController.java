@@ -3,22 +3,26 @@ package com.fpt.edu.DomanticHelper.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fpt.edu.DomanticHelper.entity.UserEntity;
-import com.fpt.edu.DomanticHelper.service.UserEntityService;
+import com.fpt.edu.DomanticHelper.service.UserEntityServiceImpl;
 
+@CrossOrigin(origins = "http://localhost:3000/")
 @RestController
+@RequestMapping("/api/v1/")
 public class UserEntityController {
 
 	@Autowired
-    private UserEntityService userEntityService;
+    private UserEntityServiceImpl userEntityService;
 	
 	// expose "/user" and return list of user
 	@GetMapping("/users")
@@ -46,7 +50,7 @@ public class UserEntityController {
 	public UserEntity addUser(@RequestBody UserEntity theUser) {
 		
 		theUser.setId(0);	
-		userEntityService.save(theUser);
+		userEntityService.updateUser(theUser);
 		
 		return theUser;
 	}
@@ -56,26 +60,26 @@ public class UserEntityController {
 	@PutMapping("/users")
 	public UserEntity updateUser(@RequestBody UserEntity theUser) {
 		
-		userEntityService.save(theUser);
+		userEntityService.updateUser(theUser);
 		
 		return theUser;
 	}
 	
 	// add mapping for DELETE /users/{userId} - delete users
 	
-	@DeleteMapping("/users/{userId}")
-	public String deleteUser(@PathVariable int userId) {
-		
-		UserEntity tempUserEntity = userEntityService.findById(userId);
-		
-		// throw exception if null
-		
-		if (tempUserEntity == null) {
-			throw new RuntimeException("User id not found - " + userId);
-		}
-		
-		userEntityService.deleteById(userId);
-		
-		return "Deleted User id - " + userId;
-	}
+//	@DeleteMapping("/users/{userId}")
+//	public String deleteUser(@PathVariable int userId) {
+//		
+//		UserEntity tempUserEntity = userEntityService.findById(userId);
+//		
+//		// throw exception if null
+//		
+//		if (tempUserEntity == null) {
+//			throw new RuntimeException("User id not found - " + userId);
+//		}
+//		
+//		userEntityService.deleteById(userId);
+//		
+//		return "Deleted User id - " + userId;
+//	}
 }

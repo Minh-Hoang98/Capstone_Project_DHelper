@@ -101,10 +101,9 @@ public class LocationEntity {
 	}
 	@Override
 	public String toString() {
-		return "LocationEntity [idLocation=" + id + ", country=" + country + ", province=" + province
-				+ ", district=" + district + ", subDistrict=" + subDistrict + ", group=" + groupLocation + ", numberHome="
-				+ numberHome + "]";
+		return "LocationEntity [id=" + id + ", country=" + country + ", province=" + province + ", district=" + district
+				+ ", subDistrict=" + subDistrict + ", groupLocation=" + groupLocation + ", numberHome=" + numberHome
+				+ "]";
 	}
-	
 	
 }

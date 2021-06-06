@@ -5,6 +5,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +19,8 @@ import com.fpt.edu.DomanticHelper.entity.UserEntity;
 import com.fpt.edu.DomanticHelper.jpa.UserEntityReponsitory;
 
 @Service
-public class UserEntityServiceImpl implements UserEntityService {
+@Transactional
+public class UserEntityServiceImpl{
 	
 	private static ArrayList<UserEntity> users =  new ArrayList<UserEntity>();
 	
@@ -33,12 +36,10 @@ public class UserEntityServiceImpl implements UserEntityService {
 	@Autowired
 	private UserEntityReponsitory userEntityReponsitory;
 
-	@Override
 	public List<UserEntity> findAll() {
 		return users;
 	}
 
-	@Override
 	public UserEntity findById(int theId) {
 //		Optional<UserEntity> result = userEntityReponsitory.findById(theId);
 //
@@ -58,15 +59,9 @@ public class UserEntityServiceImpl implements UserEntityService {
 		}
 		return null;
 	}
-
-	@Override
-	public void save(UserEntity theUser) {
-		userEntityReponsitory.save(theUser);
-	}
-
-	@Override
-	public void deleteById(int theId) {
-		userEntityReponsitory.deleteById(theId);
-	}
+	
+	public UserEntity updateUser(UserEntity user) {
+        return userEntityReponsitory.save(user);
+    }
 
 }
