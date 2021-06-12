@@ -11,7 +11,7 @@ import javax.persistence.*;
 public class LocationEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id_location")
+	@Column(name = "id")
 	private Long id;
 	
 	@Column(name = "country",length = 100)

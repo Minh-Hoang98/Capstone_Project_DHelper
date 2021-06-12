@@ -186,14 +186,6 @@ public class IdentityEntity {
 		this.locationHome = locationHome;
 	}
 
-	public UserEntity getUser() {
-		return user;
-	}
-
-	public void setUser(UserEntity user) {
-		this.user = user;
-	}
-
 	@Override
 	public String toString() {
 		return "IdentityEntity [idIdentity=" + idIdentity + ", image=" + image + ", firstName=" + firstName

@@ -2,7 +2,10 @@ package com.fpt.edu.DomanticHelper.controller;
 
 import java.util.List;
 
+import com.fpt.edu.DomanticHelper.entity.LocationEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,68 +21,33 @@ import com.fpt.edu.DomanticHelper.service.UserEntityServiceImpl;
 
 @CrossOrigin(origins = "http://localhost:3000/")
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/users")
 public class UserEntityController {
 
 	@Autowired
     private UserEntityServiceImpl userEntityService;
-	
-	// expose "/user" and return list of user
-	@GetMapping("/users")
-	public List<UserEntity> findAll() {
-		return userEntityService.findAll();
+
+	@GetMapping("/all")
+	public ResponseEntity<List<UserEntity>> getAllUser () {
+		List<UserEntity> users = userEntityService.findAllUser();
+		return new ResponseEntity<>(users, HttpStatus.OK);
 	}
 
-	// add mapping for GET /user/{userId}
-	
-	@GetMapping("/users/{userId}")
-	public UserEntity getUser(@PathVariable int userId) {
-		
-		UserEntity theUser = userEntityService.findById(userId);
-		
-		if (theUser == null) {
-			throw new RuntimeException("User id not found - " + userId);
-		}
-		
-		return theUser;
+	@GetMapping("/find/{id}")
+	public ResponseEntity<UserEntity> getUserById (@PathVariable("id") int id) {
+		UserEntity user = userEntityService.findUserById(id);
+		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
-	
-	// add mapping for POST /user - add new user
-	
-	@PostMapping("/users")
-	public UserEntity addUser(@RequestBody UserEntity theUser) {
-		
-		theUser.setId(0);	
-		userEntityService.updateUser(theUser);
-		
-		return theUser;
+
+	@PostMapping("/add")
+	public ResponseEntity<UserEntity> addUser(@RequestBody UserEntity user) {
+		UserEntity newUser = userEntityService.addUserEntity(user);
+		return new ResponseEntity<>(newUser, HttpStatus.CREATED);
 	}
-	
-	// add mapping for PUT /users - update existing users
-	
-	@PutMapping("/users")
-	public UserEntity updateUser(@RequestBody UserEntity theUser) {
-		
-		userEntityService.updateUser(theUser);
-		
-		return theUser;
+
+	@PutMapping("/update")
+	public ResponseEntity<UserEntity> updateUser(@RequestBody UserEntity user) {
+		UserEntity updateUser = userEntityService.updateUser(user);
+		return new ResponseEntity<>(updateUser, HttpStatus.OK);
 	}
-	
-	// add mapping for DELETE /users/{userId} - delete users
-	
-//	@DeleteMapping("/users/{userId}")
-//	public String deleteUser(@PathVariable int userId) {
-//		
-//		UserEntity tempUserEntity = userEntityService.findById(userId);
-//		
-//		// throw exception if null
-//		
-//		if (tempUserEntity == null) {
-//			throw new RuntimeException("User id not found - " + userId);
-//		}
-//		
-//		userEntityService.deleteById(userId);
-//		
-//		return "Deleted User id - " + userId;
-//	}
 }

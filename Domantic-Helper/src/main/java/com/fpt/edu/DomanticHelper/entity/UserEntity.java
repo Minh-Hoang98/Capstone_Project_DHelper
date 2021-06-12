@@ -21,19 +21,19 @@ public class UserEntity {
 	@Column(name = "id")
 	private int id;
 
-	@Column(name = "avatar")
+	@Column(name = "avatar",nullable = false)
 	private String avatar;
 
-	@Column(name = "user_name")
+	@Column(name = "user_name", nullable = false, unique = true)
 	private String userName;
 
-	@Column(name = "password")
+	@Column(name = "password", nullable = false)
 	private String password;
 
-	@Column(name = "phone")
+	@Column(name = "phone", nullable = false)
 	private String phone;
 
-	@Column(name = "email")
+	@Column(name = "email", nullable = false)
 	private String email;
 
 	@Column(name = "status")
@@ -171,22 +171,6 @@ public class UserEntity {
 
 	public void setIdentityEntity(IdentityEntity identityEntity) {
 		this.identityEntity = identityEntity;
-	}
-
-	public Employee getEmployee() {
-		return employee;
-	}
-
-	public void setEmployee(Employee employee) {
-		this.employee = employee;
-	}
-
-	public HelperJob getHelperJobs() {
-		return helperJobs;
-	}
-
-	public void setHelperJobs(HelperJob helperJobs) {
-		this.helperJobs = helperJobs;
 	}
 
 	@Override
