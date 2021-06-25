@@ -7,17 +7,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.fpt.edu.DomanticHelper.entity.LocationEntity;
-import com.fpt.edu.DomanticHelper.service.LocationEntityServiceImpl;
+import com.fpt.edu.DomanticHelper.entity.Location;
+import com.fpt.edu.DomanticHelper.security.services.LocationEntityServiceImpl;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/location")
 public class LocationEntityController {
 
-	@Autowired
+    @Autowired
     private LocationEntityServiceImpl locationEntityService;
-	
+
 //	// expose "/user" and return list of user
 //	@GetMapping("/locations")
 //	public List<LocationEntity> findAllLocation() {
@@ -58,28 +58,28 @@ public class LocationEntityController {
 //		
 //		return theLocation;
 //	}
-	
-	@GetMapping("/all")
-    public ResponseEntity<List<LocationEntity>> getAllLocation () {
-        List<LocationEntity> locations = locationEntityService.findAllLocation();
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Location>> getAllLocation() {
+        List<Location> locations = locationEntityService.findAllLocation();
         return new ResponseEntity<>(locations, HttpStatus.OK);
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<LocationEntity> getLocationById (@PathVariable("id") Long id) {
-    	LocationEntity employee = locationEntityService.findLocationById(id);
+    public ResponseEntity<Location> getLocationById(@PathVariable("id") Long id) {
+        Location employee = locationEntityService.findLocationById(id);
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<LocationEntity> addLocation(@RequestBody LocationEntity location) {
-    	LocationEntity newLocation = locationEntityService.addLocationEntity(location);
+    public ResponseEntity<Location> addLocation(@RequestBody Location location) {
+        Location newLocation = locationEntityService.addLocationEntity(location);
         return new ResponseEntity<>(newLocation, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<LocationEntity> updateLocation(@RequestBody LocationEntity location) {
-    	LocationEntity updateLocation = locationEntityService.updateLocation(location);
+    public ResponseEntity<Location> updateLocation(@RequestBody Location location) {
+        Location updateLocation = locationEntityService.updateLocation(location);
         return new ResponseEntity<>(updateLocation, HttpStatus.OK);
     }
 

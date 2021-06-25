@@ -31,6 +31,7 @@ export default class LocationList extends Component {
     deleteLocation = (id) => {
         alert(id)
     };
+
     render() {
         return (
             <div>
@@ -69,7 +70,7 @@ export default class LocationList extends Component {
                                                     icon={faEdit}/></Link>{''}
                                                 <Button size="sm" variant="outline-danger"
                                                         onClick={this.deleteLocation.bind(this, location.idLocation)}>
-                                                    <FontAwesomeIcon icon={faEdit} /></Button>
+                                                    <FontAwesomeIcon icon={faEdit}/></Button>
                                             </ButtonGroup>
                                         </td>
                                     </tr>

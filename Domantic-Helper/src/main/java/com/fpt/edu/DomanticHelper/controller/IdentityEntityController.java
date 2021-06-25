@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fpt.edu.DomanticHelper.entity.IdentityEntity;
+import com.fpt.edu.DomanticHelper.entity.Identity;
 
 @RestController
 public class IdentityEntityController {
@@ -58,5 +58,5 @@ public class IdentityEntityController {
 //		
 //		return theIdentity;
 //	}
-	
+
 }

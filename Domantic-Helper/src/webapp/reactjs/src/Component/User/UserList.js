@@ -47,7 +47,6 @@ export default class UserList extends Component {
                                     <td>{user.userName}</td>
 
 
-
                                 </tr>
 
                             ))

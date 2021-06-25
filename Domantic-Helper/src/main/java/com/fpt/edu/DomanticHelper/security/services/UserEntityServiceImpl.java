@@ -1,28 +1,21 @@
-package com.fpt.edu.DomanticHelper.service;
+package com.fpt.edu.DomanticHelper.security.services;
 
-import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
-import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import com.fpt.edu.DomanticHelper.entity.*;
 import com.fpt.edu.DomanticHelper.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fpt.edu.DomanticHelper.entity.Employee;
-import com.fpt.edu.DomanticHelper.entity.HelperJob;
-
-import com.fpt.edu.DomanticHelper.entity.IdentityEntity;
-import com.fpt.edu.DomanticHelper.entity.LocationEntity;
-import com.fpt.edu.DomanticHelper.entity.UserEntity;
-import com.fpt.edu.DomanticHelper.jpa.UserEntityReponsitory;
+import com.fpt.edu.DomanticHelper.jpa.UserRepository;
 
 @Service
 @Transactional
-public class UserEntityServiceImpl{
-	
+public class UserEntityServiceImpl {
+
 //	private static ArrayList<UserEntity> users =  new ArrayList<UserEntity>();
 //
 //	private static ArrayList<IdentityEntity> identities =  new ArrayList<IdentityEntity>();
@@ -34,24 +27,35 @@ public class UserEntityServiceImpl{
 //
 //	}
 
-	@Autowired
-	private UserEntityReponsitory userEntityReponsitory;
+    @Autowired
+    private UserRepository userRepository;
 
-	public List<UserEntity> findAllUser() {
-		return userEntityReponsitory.findAll();
-	}
+    public List<User> findAllUser() {
+        return userRepository.findAll();
+    }
 
-	public UserEntity findUserById(int id) {
-		return userEntityReponsitory.findUserEntityById(id)
-				.orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
-	}
+    public User findUserById(int id) {
+        return userRepository.findUserEntityById(id)
+                .orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
+    }
 
-	public UserEntity addUserEntity(UserEntity userEntity) {
-		userEntity.setId(0);
-		return userEntityReponsitory.save(userEntity);
-	}
+    public User addUserEntity(User userEntity) {
+        userEntity.setId(0);
+        return userRepository.save(userEntity);
+    }
 
-	public UserEntity updateUser(UserEntity user) {
-		return userEntityReponsitory.save(user);
-	}
+    public User updateUser(User user) {
+        return userRepository.save(user);
+    }
+
+//	@Override
+//	public UserDetails loadUserByUsername(String username) {
+//		// Kiểm tra xem user có tồn tại trong database không?
+//		UserEntity user = userEntityReponsitory.findByUsername(username);
+//		if (user == null) {
+//			throw new UsernameNotFoundException(username);
+//		}
+//		return new CustomUserDetails(user);
+//	}
+
 }

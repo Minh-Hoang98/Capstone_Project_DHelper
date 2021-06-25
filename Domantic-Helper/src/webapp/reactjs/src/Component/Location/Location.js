@@ -41,7 +41,7 @@ export default class Location extends Component {
                     })
                 }
             }).catch((error) => {
-                console.error("Error - " + error);
+            console.error("Error - " + error);
         })
     }
     submitLocation = event => {

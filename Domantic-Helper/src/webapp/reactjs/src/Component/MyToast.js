@@ -4,7 +4,7 @@ import {Toast} from "react-bootstrap";
 export default class MyToast extends Component {
     render() {
         const toastCss = {
-            position:'fixed',
+            position: 'fixed',
             top: '10px',
             right: '10px',
             zIndex: '1',
@@ -12,9 +12,12 @@ export default class MyToast extends Component {
         }
 
         return (
-            <div style={this.props.show ? toastCss : null }>
-                <Toast className={`border text-white ${this.props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`} show = {this.props.show }>
-                    <Toast.Header className={`text-white ${this.props.type === "success" ? "bg-success" : "bg-danger"}`} closeButton={false}>
+            <div style={this.props.show ? toastCss : null}>
+                <Toast
+                    className={`border text-white ${this.props.type === "success" ? "border-success bg-success" : "border-danger bg-danger"}`}
+                    show={this.props.show}>
+                    <Toast.Header className={`text-white ${this.props.type === "success" ? "bg-success" : "bg-danger"}`}
+                                  closeButton={false}>
                         <strong className="mr-auto">Success</strong>
                     </Toast.Header>
                     <Toast.Body>
