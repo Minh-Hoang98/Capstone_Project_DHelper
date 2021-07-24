@@ -71,7 +71,7 @@ export default class Login extends Component {
     if (this.checkBtn.context._errors.length === 0) {
       AuthService.login(this.state.username, this.state.password).then(
         () => {
-          this.props.history.push("/profile");
+          this.props.history.push("/");
           window.location.reload();
         },
         error => {
@@ -104,7 +104,8 @@ export default class Login extends Component {
     <div className="forms-container">
       <div className="signin-signup">
         
-      <Form
+      <Form 
+            className='loginUp sign-in-form'
             onSubmit={this.handleLogin}
             ref={c => {
               this.form = c;
@@ -117,24 +118,27 @@ export default class Login extends Component {
                 </div>
               </div>
             )}
-          <h2 className="title">Đăng Nhập</h2>
-          <div className="input-field">
+          <h2 className="titleLg">Đăng Nhập</h2>
+          <div className="input-field inputfield">
             <i className="fas fa-user" />
             <Input
                 type="text"
                 name="username"
+                placeholder="Tên Đăng Nhập"
                 value={this.state.username}
                 onChange={this.onChangeUsername}
                 validations={[requiredUserName]}
               />
+             
           </div>
           <div className="gc"></div>
-          <div className="input-field">
+          <div className="input-field inputfield">
             <i className="fas fa-lock" />
             <Input
-                 className="pt-3"
+                 className="pt-2"
                 type="password"
                 name="password"
+                placeholder="Mật khẩu"
                 value={this.state.password}
                 onChange={this.onChangePassword}
                 validations={[requiredPassword]}
@@ -143,7 +147,7 @@ export default class Login extends Component {
           <div className="gc"></div>
           <div className="form-group">
               <button
-                className="btn btn-primary btn-block"
+                className="btn btn-primary btn-block btnLg"
                 disabled={this.state.loading}
               >
                 {this.state.loading && (
@@ -183,12 +187,13 @@ export default class Login extends Component {
           <p>
             Vui lòng đăng ký tài khoản để bạn có thể tuyển được nhiều giúp việc phù hợp nhất với mình !
           </p>
-     
-          <button className="btn transparent" onclick={this.changeInUp}  id="sign-up-btn">
+           <button className="btn transparent btnLg" onclick={this.changeInUp}  id="sign-up-btn">
             Đăng ký
           </button>
+           
+          
         </div>
-        <img src={img_login} alt="logo" className="image" />
+        <img src={img_login} alt="logo" className="imagee" />
       </div>
     </div>
   </div>
