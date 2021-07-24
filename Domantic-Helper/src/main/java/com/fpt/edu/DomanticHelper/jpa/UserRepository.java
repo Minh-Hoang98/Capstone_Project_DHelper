@@ -10,10 +10,13 @@ import com.fpt.edu.DomanticHelper.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-	Optional<User> findUserEntityById(int id);
+    Optional<User> findUserEntityById(int id);
 
-	Optional<User> findUserEntityByUsername(String username);
-	Boolean existsByUsername(String username);
+    Optional<User> findUserEntityByUsername(String username);
 
-	Boolean existsByEmail(String email);
+    Boolean existsByUsername(String username);
+
+    Boolean existsByEmail(String email);
+    
+    Boolean existsByPhone(String phone);
 }

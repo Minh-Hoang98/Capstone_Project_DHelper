@@ -41,12 +41,16 @@ public class Post {
     @JoinColumn(name = "location_work")
     private Location workLocation;
 
+    @ManyToOne
+    @JoinColumn(name = "user_post")
+    private User userPost;
+
     public Post() {
         super();
     }
 
     public Post(Long id, String tile, String content, String image, float salary, Date dateStart, String dayOff,
-                      String status, Location workLocation) {
+                String status, Location workLocation) {
         super();
         this.id = id;
         this.tile = tile;

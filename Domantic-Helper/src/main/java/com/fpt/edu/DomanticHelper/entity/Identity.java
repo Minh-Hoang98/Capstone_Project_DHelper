@@ -15,39 +15,39 @@ public class Identity {
     @Column(name = "id_dentity")
     private int idIdentity;
 
-    @Column(name = "image")
+    @Column(name = "image", nullable = false, length = 50)
     private String image;
 
-    @Column(name = "first_name")
+    @Column(name = "first_name", nullable = false, length = 125)
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", nullable = false, length = 125)
     private String lastName;
 
-    @Column(name = "nick_name")
+    @Column(name = "nick_name", nullable = false, length = 125)
     private String nickName;
 
-    @Column(name = "gender")
+    @Column(name = "gender", nullable = false, length = 50)
     private String gender;
 
-    @Column(name = "day_of_birth")
+    @Column(name = "day_of_birth", nullable = false, length = 125)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dob;
 
-    @Column(name = "nationality")
+    @Column(name = "nationality", nullable = false, length = 125)
     private String nationality;
 
-    @Column(name = "religion")
+    @Column(name = "religion", nullable = false, length = 125)
     private String religion;
 
-    @Column(name = "native_country")
+    @Column(name = "native_country", nullable = false, length = 125)
     private String nativeCountry;
 
-    @Column(name = "identity_characteristics")
+    @Column(name = "identity_characteristics", nullable = false, length = 125)
     private String identityCharacteristics;
 
-    @Column(name = "date_of_issue")
+    @Column(name = "date_of_issue", nullable = false, length = 125)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dateOfIssue;

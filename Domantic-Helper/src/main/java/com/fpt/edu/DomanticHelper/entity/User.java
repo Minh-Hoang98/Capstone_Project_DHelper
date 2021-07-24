@@ -1,6 +1,7 @@
 package com.fpt.edu.DomanticHelper.entity;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -8,11 +9,7 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(	name = "user", 
-uniqueConstraints = { 
-	@UniqueConstraint(columnNames = "username"),
-	@UniqueConstraint(columnNames = "email") 
-})
+@Table(	name = "user")
 public class User {
 
     @Id
@@ -20,29 +17,32 @@ public class User {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "avatar")
+    @Column(name = "avatar", length = 125)
     private String avatar;
 
-    @Column(name = "username", nullable = false, unique = true)
+    @Column(name = "username", length = 125, nullable = false)
     private String username;
 
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "phone")
+    @Column(name = "phone", length = 50)
     private String phone;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, length = 125)
     private String email;
 
-    @Column(name = "status")
+    @Column(name = "status", length = 255)
     private String status;
 
     @ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(	name = "user_roles", 
-				joinColumns = @JoinColumn(name = "user_id"), 
+	@JoinTable(	name = "user_roles",
+				joinColumns = @JoinColumn(name = "user_id"),
 				inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> role = new HashSet<>();
+
+    @OneToMany(mappedBy = "userPost", cascade = CascadeType.ALL)
+    private List<Post> posts;
 
     @ManyToOne
     @JoinColumn(name = "location_current")
@@ -62,11 +62,12 @@ public class User {
         super();
     }
 
-   
-    public User(String userName, String password, String email) {
+
+    public User(String userName,String phone, String password, String email) {
 		super();
 		this.username = userName;
 		this.password = password;
+		this.phone = phone;
 		this.email = email;
 	}
 

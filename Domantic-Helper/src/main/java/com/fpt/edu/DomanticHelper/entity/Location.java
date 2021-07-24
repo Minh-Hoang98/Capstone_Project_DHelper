@@ -14,26 +14,23 @@ public class Location {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "country", length = 100)
+    @Column(name = "country", length = 100, nullable = false)
     private String country;
 
-    @Column(name = "province", length = 100)
+    @Column(name = "province", length = 100, nullable = false)
     private String province;
 
-    @Column(name = "district", length = 100)
+    @Column(name = "district", length = 100, nullable = false)
     private String district;
 
-    @Column(name = "sub_district", length = 100)
+    @Column(name = "sub_district", length = 100, nullable = false)
     private String subDistrict;
 
-    @Column(name = "group_location", length = 100)
+    @Column(name = "group_location", length = 100, nullable = false)
     private String groupLocation;
 
-    @Column(name = "number_home")
+    @Column(name = "number_home", nullable = false)
     private int numberHome;
-
-    @OneToMany(mappedBy = "workLocation", cascade = CascadeType.ALL)
-    private List<Post> posts;
 
 
     @OneToMany(mappedBy = "currentLocation", cascade = CascadeType.ALL)

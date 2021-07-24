@@ -1,7 +1,7 @@
 package com.fpt.edu.DomanticHelper.payload.request;
 import javax.validation.constraints.*;
 public class LoginRequest {
-	
+
 	@NotBlank
 	private String username;
 

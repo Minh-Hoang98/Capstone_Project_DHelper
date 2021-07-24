@@ -44,7 +44,7 @@
   <class id="5" language="java" name="com.fpt.edu.DomanticHelper.entity.Post" project="Domantic-Helper" 
     file="/Domantic-Helper/src/main/java/com/fpt/edu/DomanticHelper/entity/Post.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="459" width="338" x="932" y="-6"/>    
+    <position height="459" width="338" x="978" y="31"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -73,58 +73,58 @@
   </class>  
   <association id="8">    
     <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="9" name="users_helper">        
+      <attribute id="9" name="rates_helper">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="10" minimum="0" maximum="1">        
+      <multiplicity id="10" minimum="0" maximum="2147483647">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </multiplicity>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="11">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="12" name="users_helper">        
+        <position height="0" width="0" x="0" y="0"/>      
+      </attribute>      
+      <multiplicity id="13" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="11">    
-    <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="12" name="rates_emp">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="13" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
   <association id="14">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="15" name="rates_helper">        
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="15" name="user_emp">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="16" minimum="0" maximum="2147483647">        
+      <multiplicity id="16" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="6" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="17">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="18" name="helperJobs">        
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="18" name="locationHome">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="19" minimum="0" maximum="2147483647">        
+      <multiplicity id="19" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="20">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="21" name="employee">        
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="21" name="employees">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="22" minimum="0" maximum="1">        
+      <multiplicity id="22" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
@@ -132,70 +132,70 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="23">    
-    <end type="SOURCE" refId="6" navigable="false">      
-      <attribute id="24" name="employees">        
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="24" name="identities">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="25" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="26">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="27" name="helperJobs">        
+      <attribute id="27" name="identityEntity">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="28" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="29">    
+    <bendpoint x="380" y="597"/>    
     <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="30" name="posts">        
+      <attribute id="30" name="users">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="31" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="32">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="33" name="identityEntity">        
+      <attribute id="33" name="employee">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="34" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
+    <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="35">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="36" name="workLocation">        
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="36" name="helperJobs">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="37" minimum="0" maximum="1">        
+      <multiplicity id="37" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="38">    
-    <bendpoint x="401" y="597"/>    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="39" name="currentLocation">        
-        <position height="0" width="0" x="0" y="0"/>      
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="39" name="workLocation">        
+        <position height="20" width="84" x="783" y="245"/>      
       </attribute>      
       <multiplicity id="40" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
@@ -205,12 +205,11 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="41">    
-    <bendpoint x="380" y="597"/>    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="42" name="users">        
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="42" name="user">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="43" minimum="0" maximum="2147483647">        
+      <multiplicity id="43" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
@@ -219,46 +218,23 @@
   </association>  
   <association id="44">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="45" name="user_emp">        
+      <attribute id="45" name="rates_emp">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
-      <multiplicity id="46" minimum="0" maximum="1">        
+      <multiplicity id="46" minimum="0" maximum="2147483647">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
+    <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="47">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="48" name="user">        
+    <bendpoint x="401" y="597"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="48" name="currentLocation">        
         <position height="0" width="0" x="0" y="0"/>      
       </attribute>      
       <multiplicity id="49" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="50">    
-    <end type="SOURCE" refId="4" navigable="false">      
-      <attribute id="51" name="identities">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="52" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="53">    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="54" name="locationHome">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="55" minimum="0" maximum="1">        
         <position height="0" width="0" x="0" y="0"/>      
       </multiplicity>    
     </end>    
