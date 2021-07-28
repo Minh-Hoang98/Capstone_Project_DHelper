@@ -399,7 +399,7 @@ export default class PostTop_home extends Component {
                   name="sellist1"
                   onChange={this.handleDropdownChange}
                 >
-                  <option>Chọn tỉnh :</option>
+                  <option selected hidden>Chọn tỉnh :</option>
                   {this.renderTinh()}
                 </select>
               </div>
