@@ -52,14 +52,14 @@ const vpassword = (value) => {
 };
 
 function isVietnamesePhoneNumber(number) {
-  return /([\+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/.test(number);
+  return /([0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/.test(number);
 }
 
 const phone =(value) =>{
 if (!isVietnamesePhoneNumber(value))
 return (
   <div className="text-danger alertLog" role="alert">
-  Phone must start (84 | +84 | 0) and have 10  characters
+  Phone must start (03 | 09 | 06 ,...) and have 10  characters
   </div>
 );
 
