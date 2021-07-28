@@ -5,6 +5,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 
+
 import AuthService from "../../services/auth.service";
 
 
@@ -44,7 +45,50 @@ export default class Login extends Component {
       loading: false,
       message: ""
     };
+
+
+
+  } 
+
+
+//   componentDidMount() {
+//     // If the OAuth2 login encounters an error, the user is redirected to the /login page with an error.
+//     // Here we display the error and then remove the error query parameter from the location.
+//     if(this.props.location.state && this.props.location.state.error) {
+//         setTimeout(() => {
+//             Alert.error(this.props.location.state.error, {
+//                 timeout: 5000
+//             });
+//             this.props.history.replace({
+//                 pathname: this.props.location.pathname,
+//                 state: {}
+//             });
+//         }, 100);
+//     }
+// }
+
+
+  componentDidMount(){
+
+    if ( this.props.location.state) 
+    
+    {
+        const data =this.props.history.location.state.myData;
+      console.log("sSSSS",data)
+      this.setState({
+        message: data});
+
+      
+    }
+
+    setTimeout(() =>
+      this.setState({
+        message: ""
+      }),3000)
+
   }
+  
+
 
   onChangeUsername(e) {
     this.setState({
@@ -99,12 +143,12 @@ export default class Login extends Component {
  
     return (
       <div>
-
+     
   <div className="block">
     <div className="forms-container">
       <div className="signin-signup">
         
-      <Form 
+             <Form 
             className='loginUp sign-in-form'
             onSubmit={this.handleLogin}
             ref={c => {
@@ -146,6 +190,7 @@ export default class Login extends Component {
           </div>
           <div className="gc"></div>
           <div className="form-group">
+                  <button>Resetpass:</button>
               <button
                 className="btn btn-primary btn-block btnLg"
                 disabled={this.state.loading}
@@ -153,10 +198,13 @@ export default class Login extends Component {
                 {this.state.loading && (
                   <span className="spinner-border spinner-border-sm"></span>
                 )}
+
+           
+            
                 <span>Login</span>
               </button>
             </div>
-
+         
             
             <CheckButton
               style={{ display: "none" }}

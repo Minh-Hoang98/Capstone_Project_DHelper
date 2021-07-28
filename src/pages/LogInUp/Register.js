@@ -8,6 +8,9 @@ import AuthService from "../../services/auth.service";
 import { isEmail } from "validator";
 import firebase from "./firebase";
 
+
+
+
 const required = (value) => {
   if (!value) {
     return (
@@ -48,7 +51,24 @@ const vpassword = (value) => {
   }
 };
 
+function isVietnamesePhoneNumber(number) {
+  return /([\+84|84|0]+(3|5|7|8|9|1[2|6|8|9]))+([0-9]{8})\b/.test(number);
+}
+
+const phone =(value) =>{
+if (!isVietnamesePhoneNumber(value))
+return (
+  <div className="text-danger alertLog" role="alert">
+  Phone must start (84 | +84 | 0) and have 10  characters
+  </div>
+);
+
+};
+
+
 export default class Register extends Component {
+
+  
   constructor(props) {
     super(props);
     this.handleRegister = this.handleRegister.bind(this);
@@ -151,9 +171,21 @@ export default class Register extends Component {
       ).then(
         (response) => {
           this.setState({
+
             message: response.data.message,
             successful: true,
-          });
+        
+          }
+          );
+
+          this.props.history.push({
+            pathname: '/login',
+            state :{
+              myData: this.state.message // your data array of objects
+              }
+              
+          })
+          
         },
         (error) => {
           const resMessage =
@@ -170,6 +202,7 @@ export default class Register extends Component {
         }
       );
     }
+
     //   this.onSignInSubmit();
   }
   render() {
@@ -238,6 +271,7 @@ export default class Register extends Component {
                         name="phone"
                         value={this.state.phone}
                         onChange={this.handleChange}
+                        validations={[required, phone]}
                       />
                       <div id="sign-in"></div>
                     </div>

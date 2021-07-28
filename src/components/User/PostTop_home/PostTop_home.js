@@ -21,18 +21,31 @@ export default class PostTop_home extends Component {
       isFull: true,
       isPar: true,
       selectValue: "",
+
     };
     this.handlePageClick = this.handlePageClick.bind(this);
     this.submit = this.submit.bind(this);
     this.onChangePart = this.onChangePart.bind(this);
     this.onChangeFul = this.onChangeFul.bind(this);
     this.handleDropdownChange = this.handleDropdownChange.bind(this);
+    this.tuan = this.tuan.bind(this);
+ 
   }
 
   handleDropdownChange(e) {
     this.setState({ selectValue: e.target.value });
     console.log(this.state.selectValue);
   }
+
+  
+
+  
+    tuan = () => {
+
+
+      
+    }
+
 
   handlePageClick = (e) => {
     const selectedPage = e.selected;
@@ -205,7 +218,7 @@ export default class PostTop_home extends Component {
         console.log("tinhhhhhhhhhh", this.state.selectValue);
 
         if (this.state.isFull && !this.state.isPar) {
-          if (this.state.selectValue != null) {
+          if (this.state.selectValue != "") {
             found = data.filter((element) => {
               return (
                 element.Tinh === this.state.selectValue &&
@@ -238,7 +251,7 @@ export default class PostTop_home extends Component {
             });
           }
         } else if (this.state.isPar && !this.state.isFull) {
-          if (this.state.selectValue != null) {
+          if (this.state.selectValue != "") {
             found = data.filter((element) => {
               return (
                 element.Tinh === this.state.selectValue &&
@@ -272,7 +285,7 @@ export default class PostTop_home extends Component {
           }
         } else if (this.state.isPar && this.state.isFull) {
           console.log("cuoi");
-          if (this.state.selectValue != null) {
+          if (this.state.selectValue != "") {
             found = data.filter((element) => {
               return element.Tinh === this.state.selectValue;
             });
@@ -428,7 +441,7 @@ export default class PostTop_home extends Component {
             </h4>
 
             <div class="btn-group " role="group">
-              <button type="button" class="btn btn-primary">
+              <button  class="btn btn-primary" onClick={() => this.tuan()}>
                 Tuần
               </button>
               <button type="button" class="btn btn-primary">
