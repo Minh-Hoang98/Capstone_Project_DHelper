@@ -64,7 +64,7 @@ class Navbar extends Component {
           {currentUser ? (
             <div className="navbar-nav ml-auto">
 <ul>
-      <li><NavLink to="/login" className="btLightRun" >
+      <li><NavLink to="/home" className="btLightRun" >
           <span />
           <span />
           <span />
@@ -72,7 +72,7 @@ class Navbar extends Component {
           {currentUser.username}
         </NavLink>
       </li>
-      <li><NavLink to="/logout" className="btLightRun" id="btnSignUp">
+      <li><NavLink to="/home" className="btLightRun" id="btnSignUp">
           <span />
           <span />
           <span />
@@ -104,7 +104,7 @@ class Navbar extends Component {
           Đăng Nhập
         </NavLink>
       </li>
-      <li><NavLink to="/logout" className="btLightRun" id="btnSignUp">
+      <li><NavLink to="/register" className="btLightRun" id="btnSignUp">
           <span />
           <span />
           <span />

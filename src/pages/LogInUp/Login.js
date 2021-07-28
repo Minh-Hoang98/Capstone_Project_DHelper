@@ -4,6 +4,7 @@ import img_login from './login.svg';
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import { NavLink, Link } from 'react-router-dom'
 
 
 import AuthService from "../../services/auth.service";
@@ -235,10 +236,16 @@ export default class Login extends Component {
           <p>
             Vui lòng đăng ký tài khoản để bạn có thể tuyển được nhiều giúp việc phù hợp nhất với mình !
           </p>
-           <button className="btn transparent btnLg" onclick={this.changeInUp}  id="sign-up-btn">
+            {/* <button className="btn transparent btnLg" onclick={this.changeInUp}  id="sign-up-btn">
             Đăng ký
-          </button>
-           
+          </button>  */}
+            <NavLink to="/register" className="btn transparent btnLg" id="btnSignUp">
+          <span />
+          <span />
+          <span />
+          <span />
+          Đăng Ký
+        </NavLink>
           
         </div>
         <img src={img_login} alt="logo" className="imagee" />
