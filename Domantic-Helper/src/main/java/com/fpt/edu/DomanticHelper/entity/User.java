@@ -16,8 +16,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-
-    @Column(name = "avatar", length = 125)
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
     private String avatar;
 
     @Column(name = "username", length = 125, nullable = false)
@@ -34,6 +34,9 @@ public class User {
 
     @Column(name = "status", length = 255)
     private String status;
+
+    @Column(name = "reset_password_token")
+    private String resetPasswordToken;
 
     @ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(	name = "user_roles",
@@ -90,6 +93,16 @@ public class User {
 	}
 
 
+	
+
+	public String getResetPasswordToken() {
+		return resetPasswordToken;
+	}
+
+
+	public void setResetPasswordToken(String resetPasswordToken) {
+		this.resetPasswordToken = resetPasswordToken;
+	}
 
 
 	public int getId() {

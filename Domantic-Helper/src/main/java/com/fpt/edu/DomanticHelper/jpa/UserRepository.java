@@ -3,6 +3,7 @@ package com.fpt.edu.DomanticHelper.jpa;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.fpt.edu.DomanticHelper.entity.User;
@@ -19,4 +20,11 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     Boolean existsByEmail(String email);
     
     Boolean existsByPhone(String phone);
+
+
+     @Query("SELECT c FROM User c WHERE c.email = ?1")
+    public User findByEmail(String email); 
+     
+    public User findByResetPasswordToken(String token);
 }
+

@@ -1,0 +1,1123 @@
+!SESSION 2021-07-27 10:43:01.909 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=1.8.0_301
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.cdt.core.native 4 0 2021-07-27 10:43:02.680
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.cdt.core.native [453]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.remote.core 4 0 2021-07-27 10:43:02.681
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.remote.core [459]
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner
+    -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+       org.eclipse.cdt.core.native [453]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty
+    -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.remote.ui 4 0 2021-07-27 10:43:02.682
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.remote.ui [460]
+  Unresolved requirement: Import-Package: org.eclipse.remote.core
+    -> Export-Package: org.eclipse.remote.core; bundle-symbolic-name="org.eclipse.remote.core"; bundle-version="4.0.0.201909031456"; version="0.0.0"
+       org.eclipse.remote.core [459]
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner
+           -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+              org.eclipse.cdt.core.native [453]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty
+           -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+  Unresolved requirement: Import-Package: org.eclipse.remote.core.exception
+    -> Export-Package: org.eclipse.remote.core.exception; bundle-symbolic-name="org.eclipse.remote.core"; bundle-version="4.0.0.201909031456"; version="0.0.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.cdtserial 4 0 2021-07-27 10:43:02.682
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.cdtserial [461]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+       org.eclipse.tm.terminal.view.core [468]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.cdt.native.serial; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.cdt.native.serial; bundle-version="1.2.200.202106080120"
+       org.eclipse.cdt.native.serial [456]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+         Unresolved requirement: Require-Bundle: org.eclipse.cdt.core.native; bundle-version="[6.1.0,7.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.cdt.core.native; bundle-version="6.1.200.202105261421"; singleton:="true"
+              org.eclipse.cdt.core.native [453]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.local 4 0 2021-07-27 10:43:02.682
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.local [462]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+              org.eclipse.tm.terminal.view.core [468]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.connector.process; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.connector.process; bundle-version="4.8.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.connector.process [463]
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty; mandatory:="native"
+           -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+              org.eclipse.cdt.core.native [453]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty; mandatory:="native"
+    -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.process 4 0 2021-07-27 10:43:02.686
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.process [463]
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner; mandatory:="native"
+    -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+       org.eclipse.cdt.core.native [453]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty; mandatory:="native"
+    -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.remote 4 0 2021-07-27 10:43:02.699
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.remote [464]
+  Unresolved requirement: Require-Bundle: org.eclipse.remote.ui
+    -> Bundle-SymbolicName: org.eclipse.remote.ui; bundle-version="2.1.1.201909031456"; singleton:="true"
+       org.eclipse.remote.ui [460]
+         Unresolved requirement: Import-Package: org.eclipse.remote.core
+           -> Export-Package: org.eclipse.remote.core; bundle-symbolic-name="org.eclipse.remote.core"; bundle-version="4.0.0.201909031456"; version="0.0.0"
+              org.eclipse.remote.core [459]
+                Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner
+                  -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+                     org.eclipse.cdt.core.native [453]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+                Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty
+                  -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+  Unresolved requirement: Require-Bundle: org.eclipse.remote.core
+    -> Bundle-SymbolicName: org.eclipse.remote.core; bundle-version="4.0.0.201909031456"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+              org.eclipse.tm.terminal.view.core [468]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.ssh 4 0 2021-07-27 10:43:02.700
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.ssh [465]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+              org.eclipse.tm.terminal.view.core [468]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.telnet 4 0 2021-07-27 10:43:02.700
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.telnet [466]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+       org.eclipse.tm.terminal.view.core [468]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.control 4 0 2021-07-27 10:43:02.702
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.control [467]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.view.core 4 0 2021-07-27 10:43:02.702
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.view.core [468]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.view.ui 4 0 2021-07-27 10:43:02.702
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.view.ui [469]
+  Unresolved requirement: Require-Bundle: org.eclipse.ui.ide; bundle-version="3.18.0"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.ui.editors; bundle-version="3.14.0"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.text; bundle-version="3.11.0"; resolution:="optional"
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="[5.2.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+       org.eclipse.tm.terminal.view.core [468]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jface 2 0 2021-07-27 10:43:23.653
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-07-27 10:43:23.653
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@9bf63d2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7ffcb232,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-07-27 10:43:27.943
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Duchx123'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2021-07-27 10:43:51.142 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=1.8.0_301
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.cdt.core.native 4 0 2021-07-27 10:43:51.879
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.cdt.core.native [453]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.remote.core 4 0 2021-07-27 10:43:51.883
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.remote.core [459]
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner
+    -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+       org.eclipse.cdt.core.native [453]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty
+    -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.remote.ui 4 0 2021-07-27 10:43:51.883
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.remote.ui [460]
+  Unresolved requirement: Import-Package: org.eclipse.remote.core.exception
+    -> Export-Package: org.eclipse.remote.core.exception; bundle-symbolic-name="org.eclipse.remote.core"; bundle-version="4.0.0.201909031456"; version="0.0.0"
+       org.eclipse.remote.core [459]
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner
+           -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+              org.eclipse.cdt.core.native [453]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty
+           -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+  Unresolved requirement: Import-Package: org.eclipse.remote.core
+    -> Export-Package: org.eclipse.remote.core; bundle-symbolic-name="org.eclipse.remote.core"; bundle-version="4.0.0.201909031456"; version="0.0.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.cdtserial 4 0 2021-07-27 10:43:51.883
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.cdtserial [461]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.cdt.native.serial; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.cdt.native.serial; bundle-version="1.2.200.202106080120"
+       org.eclipse.cdt.native.serial [456]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+         Unresolved requirement: Require-Bundle: org.eclipse.cdt.core.native; bundle-version="[6.1.0,7.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.cdt.core.native; bundle-version="6.1.200.202105261421"; singleton:="true"
+              org.eclipse.cdt.core.native [453]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+       org.eclipse.tm.terminal.view.core [468]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.local 4 0 2021-07-27 10:43:51.883
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.local [462]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+              org.eclipse.tm.terminal.view.core [468]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.connector.process; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.connector.process; bundle-version="4.8.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.connector.process [463]
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty; mandatory:="native"
+           -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+              org.eclipse.cdt.core.native [453]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty; mandatory:="native"
+    -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.process 4 0 2021-07-27 10:43:51.891
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.process [463]
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner; mandatory:="native"
+    -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+       org.eclipse.cdt.core.native [453]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty; mandatory:="native"
+    -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.remote 4 0 2021-07-27 10:43:51.891
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.remote [464]
+  Unresolved requirement: Require-Bundle: org.eclipse.remote.core
+    -> Bundle-SymbolicName: org.eclipse.remote.core; bundle-version="4.0.0.201909031456"; singleton:="true"
+       org.eclipse.remote.core [459]
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner
+           -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+              org.eclipse.cdt.core.native [453]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty
+           -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+  Unresolved requirement: Require-Bundle: org.eclipse.remote.ui
+    -> Bundle-SymbolicName: org.eclipse.remote.ui; bundle-version="2.1.1.201909031456"; singleton:="true"
+       org.eclipse.remote.ui [460]
+         Unresolved requirement: Import-Package: org.eclipse.remote.core
+           -> Export-Package: org.eclipse.remote.core; bundle-symbolic-name="org.eclipse.remote.core"; bundle-version="4.0.0.201909031456"; version="0.0.0"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+       org.eclipse.tm.terminal.view.core [468]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.ssh 4 0 2021-07-27 10:43:51.891
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.ssh [465]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+       org.eclipse.tm.terminal.view.core [468]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.telnet 4 0 2021-07-27 10:43:51.899
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.telnet [466]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+       org.eclipse.tm.terminal.view.core [468]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.control 4 0 2021-07-27 10:43:51.899
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.control [467]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.view.core 4 0 2021-07-27 10:43:51.899
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.view.core [468]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.view.ui 4 0 2021-07-27 10:43:51.903
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.view.ui [469]
+  Unresolved requirement: Require-Bundle: org.eclipse.ui.ide; bundle-version="3.18.0"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.ui.editors; bundle-version="3.14.0"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.text; bundle-version="3.11.0"; resolution:="optional"
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+       org.eclipse.tm.terminal.view.core [468]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="[5.2.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jface 2 0 2021-07-27 10:43:56.007
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-07-27 10:43:56.007
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@631bc9f4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@642c72cf,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-07-27 10:43:59.877
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Duchx123'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.core 4 -1 2021-07-27 10:46:45.445
+!MESSAGE Unable to create project from archetype [am.ik.archetype:graalvm-springwebflux-blank-archetype:0.1.0 -> https://repo1.maven.org/maven2]
+!STACK 0
+org.apache.maven.archetype.exception.ArchetypeGenerationFailure: org.apache.maven.archetype.exception.InvalidPackaging: Unable to add module to the current project as it is not of packaging type 'pom'
+	at org.apache.maven.archetype.generator.DefaultFilesetArchetypeGenerator.generateArchetype(DefaultFilesetArchetypeGenerator.java:237)
+	at org.apache.maven.archetype.generator.DefaultArchetypeGenerator.processFileSetArchetype(DefaultArchetypeGenerator.java:129)
+	at org.apache.maven.archetype.generator.DefaultArchetypeGenerator.generateArchetype(DefaultArchetypeGenerator.java:100)
+	at org.apache.maven.archetype.generator.DefaultArchetypeGenerator.generateArchetype(DefaultArchetypeGenerator.java:143)
+	at org.apache.maven.archetype.generator.DefaultArchetypeGenerator.generateArchetype(DefaultArchetypeGenerator.java:169)
+	at org.apache.maven.archetype.DefaultArchetypeManager.generateProjectFromArchetype(DefaultArchetypeManager.java:73)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.createArchetypeProjects0(ProjectConfigurationManager.java:840)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.lambda$3(ProjectConfigurationManager.java:790)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1373)
+	at org.eclipse.m2e.core.internal.project.ProjectConfigurationManager.createArchetypeProjects(ProjectConfigurationManager.java:790)
+	at org.eclipse.m2e.core.ui.internal.wizards.MavenProjectWizard$3.doCreateMavenProjects(MavenProjectWizard.java:232)
+	at org.eclipse.m2e.core.ui.internal.wizards.AbstractCreateMavenProjectJob$1.doCreateMavenProjects(AbstractCreateMavenProjectJob.java:65)
+	at org.eclipse.m2e.core.ui.internal.wizards.AbstractCreateMavenProjectsOperation.run(AbstractCreateMavenProjectsOperation.java:75)
+	at org.eclipse.m2e.core.ui.internal.wizards.AbstractCreateMavenProjectJob.runInWorkspace(AbstractCreateMavenProjectJob.java:69)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:42)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.apache.maven.archetype.exception.InvalidPackaging: Unable to add module to the current project as it is not of packaging type 'pom'
+	at org.apache.maven.archetype.common.DefaultPomManager.addModule(DefaultPomManager.java:99)
+	at org.apache.maven.archetype.generator.DefaultFilesetArchetypeGenerator.processPomWithParent(DefaultFilesetArchetypeGenerator.java:680)
+	at org.apache.maven.archetype.generator.DefaultFilesetArchetypeGenerator.processFilesetProject(DefaultFilesetArchetypeGenerator.java:621)
+	at org.apache.maven.archetype.generator.DefaultFilesetArchetypeGenerator.processFilesetModule(DefaultFilesetArchetypeGenerator.java:564)
+	at org.apache.maven.archetype.generator.DefaultFilesetArchetypeGenerator.generateArchetype(DefaultFilesetArchetypeGenerator.java:203)
+	... 18 more
+!SESSION 2021-07-27 10:47:45.312 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=1.8.0_301
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.cdt.core.native 4 0 2021-07-27 10:47:46.050
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.cdt.core.native [453]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.remote.core 4 0 2021-07-27 10:47:46.050
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.remote.core [459]
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner
+    -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+       org.eclipse.cdt.core.native [453]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty
+    -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.remote.ui 4 0 2021-07-27 10:47:46.055
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.remote.ui [460]
+  Unresolved requirement: Import-Package: org.eclipse.remote.core.exception
+    -> Export-Package: org.eclipse.remote.core.exception; bundle-symbolic-name="org.eclipse.remote.core"; bundle-version="4.0.0.201909031456"; version="0.0.0"
+       org.eclipse.remote.core [459]
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner
+           -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+              org.eclipse.cdt.core.native [453]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty
+           -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+  Unresolved requirement: Import-Package: org.eclipse.remote.core
+    -> Export-Package: org.eclipse.remote.core; bundle-symbolic-name="org.eclipse.remote.core"; bundle-version="4.0.0.201909031456"; version="0.0.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.cdtserial 4 0 2021-07-27 10:47:46.055
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.cdtserial [461]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+              org.eclipse.tm.terminal.view.core [468]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.cdt.native.serial; bundle-version="1.0.0"
+    -> Bundle-SymbolicName: org.eclipse.cdt.native.serial; bundle-version="1.2.200.202106080120"
+       org.eclipse.cdt.native.serial [456]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+         Unresolved requirement: Require-Bundle: org.eclipse.cdt.core.native; bundle-version="[6.1.0,7.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.cdt.core.native; bundle-version="6.1.200.202105261421"; singleton:="true"
+              org.eclipse.cdt.core.native [453]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.local 4 0 2021-07-27 10:47:46.065
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.local [462]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.connector.process; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.connector.process; bundle-version="4.8.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.connector.process [463]
+         Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty; mandatory:="native"
+           -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+              org.eclipse.cdt.core.native [453]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+              org.eclipse.tm.terminal.view.core [468]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty; mandatory:="native"
+    -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.process 4 0 2021-07-27 10:47:46.065
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.process [463]
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner; mandatory:="native"
+    -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+       org.eclipse.cdt.core.native [453]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty; mandatory:="native"
+    -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.remote 4 0 2021-07-27 10:47:46.065
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.remote [464]
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+              org.eclipse.tm.terminal.view.core [468]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.remote.ui
+    -> Bundle-SymbolicName: org.eclipse.remote.ui; bundle-version="2.1.1.201909031456"; singleton:="true"
+       org.eclipse.remote.ui [460]
+         Unresolved requirement: Import-Package: org.eclipse.remote.core
+           -> Export-Package: org.eclipse.remote.core; bundle-symbolic-name="org.eclipse.remote.core"; bundle-version="4.0.0.201909031456"; version="0.0.0"
+              org.eclipse.remote.core [459]
+                Unresolved requirement: Import-Package: org.eclipse.cdt.utils.spawner
+                  -> Export-Package: org.eclipse.cdt.utils.spawner; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+                     org.eclipse.cdt.core.native [453]
+                       Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+                Unresolved requirement: Import-Package: org.eclipse.cdt.utils.pty
+                  -> Export-Package: org.eclipse.cdt.utils.pty; bundle-symbolic-name="org.eclipse.cdt.core.native"; bundle-version="6.1.200.202105261421"; version="5.7.0"
+  Unresolved requirement: Require-Bundle: org.eclipse.remote.core
+    -> Bundle-SymbolicName: org.eclipse.remote.core; bundle-version="4.0.0.201909031456"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.ssh 4 0 2021-07-27 10:47:46.070
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.ssh [465]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+              org.eclipse.tm.terminal.view.core [468]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.connector.telnet 4 0 2021-07-27 10:47:46.070
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.connector.telnet [466]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.ui; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.ui; bundle-version="4.9.0.202105240430"; singleton:="true"
+       org.eclipse.tm.terminal.view.ui [469]
+         Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+           -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+              org.eclipse.tm.terminal.view.core [468]
+                Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="4.5.0"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="4.5.0"; resolution:="optional"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.control 4 0 2021-07-27 10:47:46.075
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.control [467]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.view.core 4 0 2021-07-27 10:47:46.075
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.view.core [468]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.tm.terminal.view.ui 4 0 2021-07-27 10:47:46.075
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.tm.terminal.view.ui [469]
+  Unresolved requirement: Require-Bundle: org.eclipse.ui.ide; bundle-version="3.18.0"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.ui.editors; bundle-version="3.14.0"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.eclipse.text; bundle-version="3.11.0"; resolution:="optional"
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.view.core; bundle-version="[4.8.0,5.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.view.core; bundle-version="4.8.0.202105200326"; singleton:="true"
+       org.eclipse.tm.terminal.view.core [468]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+  Unresolved requirement: Require-Bundle: org.eclipse.tm.terminal.control; bundle-version="[5.2.0,6.0.0)"
+    -> Bundle-SymbolicName: org.eclipse.tm.terminal.control; bundle-version="5.2.0.202105240049"; singleton:="true"
+       org.eclipse.tm.terminal.control [467]
+         Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version=11))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:463)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:1845)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:136)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1838)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1779)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1743)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1665)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:234)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:345)
+
+!ENTRY org.eclipse.jface 2 0 2021-07-27 10:47:50.575
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-07-27 10:47:50.575
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@194b9783,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@45297e7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-07-27 10:47:53.251
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Duchx123'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.

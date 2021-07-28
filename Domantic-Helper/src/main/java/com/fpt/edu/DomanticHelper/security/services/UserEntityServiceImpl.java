@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import com.fpt.edu.DomanticHelper.entity.*;
 import com.fpt.edu.DomanticHelper.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.fpt.edu.DomanticHelper.jpa.UserRepository;
@@ -58,4 +59,26 @@ public class UserEntityServiceImpl {
 //		return new CustomUserDetails(user);
 //	}
 
+ public void updateResetPasswordToken(String token, String email) throws UserNotFoundException {
+        User user = userRepository.findByEmail(email);
+        if (user != null) {
+            user.setResetPasswordToken(token);
+            userRepository.save(user);
+        } else {
+            throw new UserNotFoundException("Could not find any customer with the email " + email);
+        }
+    }
+     
+    public User getByResetPasswordToken(String token) {
+        return userRepository.findByResetPasswordToken(token);
+    }
+     
+    public void updatePassword(User user, String newPassword) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String encodedPassword = passwordEncoder.encode(newPassword);
+        user.setPassword(encodedPassword);
+         
+        user.setResetPasswordToken(null);
+        userRepository.save(user);
+    }
 }

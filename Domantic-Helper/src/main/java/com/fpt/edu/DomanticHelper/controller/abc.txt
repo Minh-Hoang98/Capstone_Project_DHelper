@@ -1,0 +1,10 @@
+
+
+POST http://localhost:8090/api/auth/signin  
+content-type: application/json
+
+[
+{
+    "username":"vudetrai",
+    "password":"123456"
+}]
