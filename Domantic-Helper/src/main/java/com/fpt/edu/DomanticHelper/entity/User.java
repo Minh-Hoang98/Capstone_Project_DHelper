@@ -17,9 +17,10 @@ public class User {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "avatar", length = 125)
+    @Lob
+    @Column(name = "avatar", columnDefinition = "MEDIUMBLOB")
     private String avatar;
-
+    
     @Column(name = "username", length = 125, nullable = false)
     private String username;
 
@@ -71,6 +72,15 @@ public class User {
 		this.email = email;
 	}
 
+    public User(String userName,String phone, String password, String email, String avatar) {
+		super();
+		this.username = userName;
+		this.password = password;
+		this.phone = phone;
+		this.email = email;
+		this.avatar = avatar;
+	}
+    
 	public User(int id, String avatar, String userName, String password, String phone, String email, String status,
 			Set<Role> role, Location currentLocation, Identity identityEntity,
 			Employee employee, HelperJob helperJob) {
