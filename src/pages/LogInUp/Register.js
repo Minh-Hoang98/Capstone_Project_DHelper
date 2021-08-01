@@ -22,17 +22,24 @@ const email = (value) => {
   if (!isEmail(value)) {
     return (
       <div className="text-danger alertLog" role="alert">
-        This is not a valid email.
+        Email không hợp lệ!
       </div>
     );
   }
 };
 
 const vusername = (value) => {
-  if (value.length < 3 || value.length > 20) {
+  if (value.length < 3) {
     return (
       <div className="text-danger alertLog" role="alert">
-        The username must be between 3 and 20 characters.
+        Tên đăng nhập quá ngắn!
+      </div>
+    );
+  }
+  if (value.length > 20) {
+    return (
+      <div className="text-danger alertLog" role="alert">
+        Tên đăng nhập quá dài!
       </div>
     );
   }
@@ -42,7 +49,17 @@ const vpassword = (value) => {
   if (value.length < 6 || value.length > 40) {
     return (
       <div className="text-danger alertLog" role="alert">
-        The password must be between 6 and 40 characters.
+        Mật khẩu phải có ít nhất 6 ký tự!
+      </div>
+    );
+  }
+};
+
+const phone = (value) => {
+  if (value.length != 10) {
+    return (
+      <div className="text-danger alertLog" role="alert">
+        Số điện thoại không đúng!
       </div>
     );
   }
