@@ -1,5 +1,6 @@
 package com.fpt.edu.DomanticHelper.entity;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -10,14 +11,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(	name = "user")
-public class User {
+public class User implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-    @Lob
-    @Column(columnDefinition = "MEDIUMBLOB")
+        @Lob
+    @Column(name = "avatar", columnDefinition = "MEDIUMBLOB")
     private String avatar;
 
     @Column(name = "username", length = 125, nullable = false)
@@ -46,7 +47,10 @@ public class User {
 
     @OneToMany(mappedBy = "userPost", cascade = CascadeType.ALL)
     private List<Post> posts;
-
+    
+    @OneToMany(mappedBy = "postApply", cascade = CascadeType.ALL)
+    private List<UserApply> postApply;
+    
     @ManyToOne
     @JoinColumn(name = "location_current")
     private Location currentLocation;
@@ -58,8 +62,8 @@ public class User {
     @OneToOne(mappedBy = "user_emp")
     private Employee employee;
 
-    @OneToOne(mappedBy = "users_helper")
-    private HelperJob helperJob;
+//    @OneToOne(mappedBy = "users_helper")
+//    private HelperJob helperJob;
 
     public User() {
         super();
@@ -72,6 +76,14 @@ public class User {
 		this.password = password;
 		this.phone = phone;
 		this.email = email;
+	}
+    public User(String userName,String phone, String password, String email, String avatar) {
+		super();
+		this.username = userName;
+		this.password = password;
+		this.phone = phone;
+		this.email = email;
+		this.avatar = avatar;
 	}
 
 	public User(int id, String avatar, String userName, String password, String phone, String email, String status,
@@ -89,7 +101,7 @@ public class User {
 		this.currentLocation = currentLocation;
 		this.identityEntity = identityEntity;
 		this.employee = employee;
-		this.helperJob = helperJob;
+
 	}
 
 
@@ -186,16 +198,6 @@ public class User {
 	}
 
 
-
-	public HelperJob getHelperJob() {
-		return helperJob;
-	}
-
-
-
-	public void setHelperJob(HelperJob helperJob) {
-		this.helperJob = helperJob;
-	}
 
 	public Location getCurrentLocation() {
         return currentLocation;

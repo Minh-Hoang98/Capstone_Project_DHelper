@@ -15,39 +15,43 @@ public class Identity {
     @Column(name = "id_dentity")
     private int idIdentity;
 
-    @Column(name = "image", nullable = false, length = 50)
+    @Column(name = "image", nullable = false)
     private String image;
+    
+    @Column(name = "image2", nullable = false)
+    private String image2;
 
-    @Column(name = "first_name", nullable = false, length = 125)
+
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "last_name", nullable = false, length = 125)
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "nick_name", nullable = false, length = 125)
+    @Column(name = "nick_name", nullable = false)
     private String nickName;
 
-    @Column(name = "gender", nullable = false, length = 50)
+    @Column(name = "gender", nullable = false)
     private String gender;
 
-    @Column(name = "day_of_birth", nullable = false, length = 125)
+    @Column(name = "day_of_birth", nullable = false)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dob;
 
-    @Column(name = "nationality", nullable = false, length = 125)
+    @Column(name = "nationality", nullable = false)
     private String nationality;
 
-    @Column(name = "religion", nullable = false, length = 125)
+    @Column(name = "religion", nullable = false)
     private String religion;
 
-    @Column(name = "native_country", nullable = false, length = 125)
+    @Column(name = "native_country", nullable = false)
     private String nativeCountry;
 
-    @Column(name = "identity_characteristics", nullable = false, length = 125)
+    @Column(name = "identity_characteristics", nullable = false)
     private String identityCharacteristics;
 
-    @Column(name = "date_of_issue", nullable = false, length = 125)
+    @Column(name = "date_of_issue", nullable = false)
     @Temporal(TemporalType.DATE)
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date dateOfIssue;

@@ -1,10 +1,16 @@
 package com.fpt.edu.DomanticHelper.controller;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.Base64;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.validation.Valid;
+
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,19 +24,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fpt.edu.DomanticHelper.entity.ERole;
+import com.fpt.edu.DomanticHelper.entity.Role;
+import com.fpt.edu.DomanticHelper.entity.User;
+import com.fpt.edu.DomanticHelper.jpa.RoleRepository;
+import com.fpt.edu.DomanticHelper.jpa.UserRepository;
 import com.fpt.edu.DomanticHelper.payload.request.LoginRequest;
 import com.fpt.edu.DomanticHelper.payload.request.SignupRequest;
 import com.fpt.edu.DomanticHelper.payload.response.JwtResponse;
 import com.fpt.edu.DomanticHelper.payload.response.MessageResponse;
 import com.fpt.edu.DomanticHelper.security.jwt.JwtUtils;
 import com.fpt.edu.DomanticHelper.security.services.UserDetailsImpl;
-import com.fpt.edu.DomanticHelper.jpa.UserRepository;
-import com.fpt.edu.DomanticHelper.entity.ERole;
-import com.fpt.edu.DomanticHelper.entity.Role;
-import com.fpt.edu.DomanticHelper.entity.User;
-import com.fpt.edu.DomanticHelper.jpa.RoleRepository;
-
-import javax.validation.Valid;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -70,12 +74,14 @@ public class AuthController {
 												 userDetails.getId(),
 												 userDetails.getUsername(),
 												 userDetails.getPhone(),
-												 userDetails.getEmail(),
+												 userDetails.getEmail(),										
+												 userDetails.getAvatar(),
 												 roles));
 	}
 
 	@PostMapping("/signup")
-	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) throws IOException {
+		
 		signUpRequest.setUsername(signUpRequest.getUsername().trim()) ;
 		if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 			return ResponseEntity
@@ -94,10 +100,14 @@ public class AuthController {
 					.badRequest()
 					.body(new MessageResponse("Số điện thoại đã được sử dụng!"));
 		}
-
+		
+		String filePath = "src/main/resources/default_Avatar.png";
+		
+		byte[] fileContent = FileUtils.readFileToByteArray(new File(filePath));
+		String encodedString = Base64.getEncoder().encodeToString(fileContent);
 		// Create new user's account
 		User user = new User(signUpRequest.getUsername(),signUpRequest.getPhone(),
-							 encoder.encode(signUpRequest.getPassword()),signUpRequest.getEmail());
+							 encoder.encode(signUpRequest.getPassword()),signUpRequest.getEmail(), encodedString);
 
 		Set<String> strRoles = signUpRequest.getRole();
 		Set<Role> roles = new HashSet<>();

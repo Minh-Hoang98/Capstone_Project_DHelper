@@ -1,6 +1,8 @@
 package com.fpt.edu.DomanticHelper.entity;
 
+import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -8,7 +10,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "post")
-public class Post {
+public class Post implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,8 +46,27 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "user_post")
     private User userPost;
+    
+    @OneToMany(mappedBy = "postId", cascade = CascadeType.ALL)
+    private List<UserApply> postApply;
+    
+    public User getUserPost() {
+		return userPost;
+	}
 
-    public Post() {
+	public void setUserPost(User userPost) {
+		this.userPost = userPost;
+	}
+
+	public List<UserApply> getPostApply() {
+		return postApply;
+	}
+
+	public void setPostApply(List<UserApply> postApply) {
+		this.postApply = postApply;
+	}
+
+	public Post() {
         super();
     }
 
