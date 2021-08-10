@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.fpt.edu.DomanticHelper.entity.User;
 import com.fpt.edu.DomanticHelper.security.services.UserEntityServiceImpl;
 
-@CrossOrigin(origins = "http://localhost:3000/")
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/users")
 public class UserEntityController {
