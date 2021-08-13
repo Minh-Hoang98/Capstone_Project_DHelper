@@ -1,5 +1,6 @@
 package com.fpt.edu.DomanticHelper.entity;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -10,17 +11,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(	name = "user")
-public class User {
+public class User implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
-
-    @Lob
+        @Lob
     @Column(name = "avatar", columnDefinition = "MEDIUMBLOB")
     private String avatar;
-    
+
     @Column(name = "username", length = 125, nullable = false)
     private String username;
 
@@ -36,14 +36,14 @@ public class User {
     @Column(name = "status", length = 255)
     private String status;
 
+    @Column(name = "reset_password_token")
+    private String resetPasswordToken;
+
     @ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(	name = "user_roles",
 				joinColumns = @JoinColumn(name = "user_id"),
 				inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> role = new HashSet<>();
-
-    @OneToMany(mappedBy = "userPost", cascade = CascadeType.ALL)
-    private List<Post> posts;
 
     @ManyToOne
     @JoinColumn(name = "location_current")
@@ -56,8 +56,8 @@ public class User {
     @OneToOne(mappedBy = "user_emp")
     private Employee employee;
 
-    @OneToOne(mappedBy = "users_helper")
-    private HelperJob helperJob;
+//    @OneToOne(mappedBy = "users_helper")
+//    private HelperJob helperJob;
 
     public User() {
         super();
@@ -71,7 +71,6 @@ public class User {
 		this.phone = phone;
 		this.email = email;
 	}
-
     public User(String userName,String phone, String password, String email, String avatar) {
 		super();
 		this.username = userName;
@@ -80,7 +79,7 @@ public class User {
 		this.email = email;
 		this.avatar = avatar;
 	}
-    
+
 	public User(int id, String avatar, String userName, String password, String phone, String email, String status,
 			Set<Role> role, Location currentLocation, Identity identityEntity,
 			Employee employee, HelperJob helperJob) {
@@ -96,10 +95,20 @@ public class User {
 		this.currentLocation = currentLocation;
 		this.identityEntity = identityEntity;
 		this.employee = employee;
-		this.helperJob = helperJob;
+
 	}
 
 
+	
+
+	public String getResetPasswordToken() {
+		return resetPasswordToken;
+	}
+
+
+	public void setResetPasswordToken(String resetPasswordToken) {
+		this.resetPasswordToken = resetPasswordToken;
+	}
 
 
 	public int getId() {
@@ -183,16 +192,6 @@ public class User {
 	}
 
 
-
-	public HelperJob getHelperJob() {
-		return helperJob;
-	}
-
-
-
-	public void setHelperJob(HelperJob helperJob) {
-		this.helperJob = helperJob;
-	}
 
 	public Location getCurrentLocation() {
         return currentLocation;
