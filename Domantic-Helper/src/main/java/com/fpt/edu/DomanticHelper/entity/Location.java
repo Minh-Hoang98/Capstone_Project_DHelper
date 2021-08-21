@@ -55,6 +55,18 @@ public class Location {
         this.groupLocation = group;
         this.numberHome = numberHome;
     }
+    
+
+    public Location( String country, String province, String district, String subDistrict,
+                          String group, int numberHome) {
+        super();       
+        this.country = country;
+        this.province = province;
+        this.district = district;
+        this.subDistrict = subDistrict;
+        this.groupLocation = group;
+        this.numberHome = numberHome;
+    }
 
     public Long getIdLocation() {
         return id;

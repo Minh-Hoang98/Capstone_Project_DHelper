@@ -32,6 +32,12 @@ public class User implements Serializable {
 	@Column(name = "email", nullable = false, length = 125)
 	private String email;
 
+	@Column(name = "hoc_van")
+	private String hocVan;
+
+	@Column(name = "chuyen_nganh")
+	private String chuyenNganh;
+
 	@Column(name = "status")
 	private String status;
 
@@ -61,7 +67,7 @@ public class User implements Serializable {
 
 	@OneToMany(mappedBy = "userApply", cascade = CascadeType.ALL)
 	private List<PostApply> userPostApply;
-	
+
 	@OneToMany(mappedBy = "userComment", cascade = CascadeType.ALL)
 	private List<PostComment> userCommentPost;
 
@@ -86,26 +92,10 @@ public class User implements Serializable {
 		this.avatar = avatar;
 	}
 
-	public User(int id, String avatar, String userName, String password, String phone, String email, String status,
-			Set<Role> role, Location currentLocation, Identity identityEntity, Employee employee, HelperJob helperJob) {
-		super();
-		this.id = id;
-		this.avatar = avatar;
-		this.username = userName;
-		this.password = password;
-		this.phone = phone;
-		this.email = email;
-		this.status = status;
-		this.role = role;
-		this.currentLocation = currentLocation;
-		this.identityEntity = identityEntity;
-		this.employee = employee;
-		this.helperJob = helperJob;
-	}
-
-	public User(int id, String avatar, String username, String password, String phone, String email, String status,
-			String resetPasswordToken, Set<Role> role, List<Post> posts, Location currentLocation,
-			Identity identityEntity, Employee employee, HelperJob helperJob, List<PostApply> userPostApply) {
+	public User(int id, String avatar, String username, String password, String phone, String email, String hocVan,
+			String chuyenNganh, String status, String resetPasswordToken, Set<Role> role, List<Post> posts,
+			Location currentLocation, Identity identityEntity, Employee employee, HelperJob helperJob,
+			List<PostApply> userPostApply, List<PostComment> userCommentPost) {
 		super();
 		this.id = id;
 		this.avatar = avatar;
@@ -113,6 +103,8 @@ public class User implements Serializable {
 		this.password = password;
 		this.phone = phone;
 		this.email = email;
+		this.hocVan = hocVan;
+		this.chuyenNganh = chuyenNganh;
 		this.status = status;
 		this.resetPasswordToken = resetPasswordToken;
 		this.role = role;
@@ -122,6 +114,39 @@ public class User implements Serializable {
 		this.employee = employee;
 		this.helperJob = helperJob;
 		this.userPostApply = userPostApply;
+		this.userCommentPost = userCommentPost;
+	}
+
+	public String getHocVan() {
+		return hocVan;
+	}
+
+	public void setHocVan(String hocVan) {
+		this.hocVan = hocVan;
+	}
+
+	public String getChuyenNganh() {
+		return chuyenNganh;
+	}
+
+	public void setChuyenNganh(String chuyenNganh) {
+		this.chuyenNganh = chuyenNganh;
+	}
+
+	public Location getCurrentLocation() {
+		return currentLocation;
+	}
+
+	public void setCurrentLocation(Location currentLocation) {
+		this.currentLocation = currentLocation;
+	}
+
+	public List<PostComment> getUserCommentPost() {
+		return userCommentPost;
+	}
+
+	public void setUserCommentPost(List<PostComment> userCommentPost) {
+		this.userCommentPost = userCommentPost;
 	}
 
 	public String getUsername() {
@@ -234,14 +259,6 @@ public class User implements Serializable {
 
 	public void setHelperJob(HelperJob helperJob) {
 		this.helperJob = helperJob;
-	}
-
-	public Location getCurrentLocation() {
-		return currentLocation;
-	}
-
-	public void setCurrentLocation(Location currentLocation) {
-		this.currentLocation = currentLocation;
 	}
 
 	public Identity getIdentityEntity() {

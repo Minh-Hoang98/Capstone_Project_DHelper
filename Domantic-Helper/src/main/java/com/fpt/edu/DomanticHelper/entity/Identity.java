@@ -15,6 +15,9 @@ public class Identity {
 	@Column(name = "id_dentity")
 	private int idIdentity;
 
+	@Column(name="number_identity", nullable = false)
+	private String numberIdentity;
+	
 	@Lob
 	@Column(name = "image", columnDefinition = "MEDIUMBLOB")
 	private String image;
@@ -59,11 +62,12 @@ public class Identity {
 		super();
 	}
 
-	public Identity(int idIdentity, String image, String image2, String name, String gender, Date dob,
-			String nationality, String religion, String identityCharacteristics, Date dateOfIssue,
+	public Identity(int idIdentity, String numberIdentity, String image, String image2, String name, String gender,
+			Date dob, String nationality, String religion, String identityCharacteristics, Date dateOfIssue,
 			Location locationHome, User user) {
 		super();
 		this.idIdentity = idIdentity;
+		this.numberIdentity = numberIdentity;
 		this.image = image;
 		this.image2 = image2;
 		this.name = name;
@@ -75,6 +79,29 @@ public class Identity {
 		this.dateOfIssue = dateOfIssue;
 		this.locationHome = locationHome;
 		this.user = user;
+	}
+
+	public Identity(int idIdentity, String image, String image2, String name, String gender, Date dob,
+			String nationality, String religion, String identityCharacteristics, Date dateOfIssue) {
+		super();
+		this.idIdentity = idIdentity;
+		this.image = image;
+		this.image2 = image2;
+		this.name = name;
+		this.gender = gender;
+		this.dob = dob;
+		this.nationality = nationality;
+		this.religion = religion;
+		this.identityCharacteristics = identityCharacteristics;
+		this.dateOfIssue = dateOfIssue;
+	}
+
+	public String getNumberIdentity() {
+		return numberIdentity;
+	}
+
+	public void setNumberIdentity(String numberIdentity) {
+		this.numberIdentity = numberIdentity;
 	}
 
 	public int getIdIdentity() {
@@ -164,13 +191,4 @@ public class Identity {
 	public void setLocationHome(Location locationHome) {
 		this.locationHome = locationHome;
 	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-	
 }
