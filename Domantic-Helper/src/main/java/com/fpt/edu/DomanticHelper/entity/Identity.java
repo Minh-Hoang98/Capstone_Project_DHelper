@@ -10,190 +10,202 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "identity")
 public class Identity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_dentity")
-    private int idIdentity;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_dentity")
+	private int idIdentity;
 
-    @Column(name = "image", nullable = false, length = 50)
-    private String image;
+	@Lob
+	@Column(name = "image", columnDefinition = "MEDIUMBLOB")
+	private String image;
 
-    @Column(name = "first_name", nullable = false, length = 125)
-    private String firstName;
+	@Lob
+	@Column(name = "image2", columnDefinition = "MEDIUMBLOB")
+	private String image2;
 
-    @Column(name = "last_name", nullable = false, length = 125)
-    private String lastName;
+	@Column(name = "first_name", nullable = false, length = 125)
+	private String firstName;
 
-    @Column(name = "nick_name", nullable = false, length = 125)
-    private String nickName;
+	@Column(name = "last_name", nullable = false, length = 125)
+	private String lastName;
 
-    @Column(name = "gender", nullable = false, length = 50)
-    private String gender;
+	@Column(name = "nick_name", nullable = false, length = 125)
+	private String nickName;
 
-    @Column(name = "day_of_birth", nullable = false, length = 125)
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date dob;
+	@Column(name = "gender", nullable = false, length = 50)
+	private String gender;
 
-    @Column(name = "nationality", nullable = false, length = 125)
-    private String nationality;
+	@Column(name = "day_of_birth", nullable = false, length = 125)
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date dob;
 
-    @Column(name = "religion", nullable = false, length = 125)
-    private String religion;
+	@Column(name = "nationality", nullable = false, length = 125)
+	private String nationality;
 
-    @Column(name = "native_country", nullable = false, length = 125)
-    private String nativeCountry;
+	@Column(name = "religion", nullable = false, length = 125)
+	private String religion;
 
-    @Column(name = "identity_characteristics", nullable = false, length = 125)
-    private String identityCharacteristics;
+	@Column(name = "native_country", nullable = false, length = 125)
+	private String nativeCountry;
 
-    @Column(name = "date_of_issue", nullable = false, length = 125)
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date dateOfIssue;
+	@Column(name = "identity_characteristics", nullable = false, length = 125)
+	private String identityCharacteristics;
 
-    @ManyToOne
-    @JoinColumn(name = "locationId")
-    private Location locationHome;
+	@Column(name = "date_of_issue", nullable = false, length = 125)
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date dateOfIssue;
 
-    @OneToOne(mappedBy = "identityEntity")
-    private User user;
+	@ManyToOne
+	@JoinColumn(name = "locationId")
+	private Location locationHome;
 
-    public Identity() {
-        super();
-    }
+	@OneToOne(mappedBy = "identityEntity")
+	private User user;
 
-    public Identity(int idIdentity, String image, String firstName, String lastName, String nickName,
-                          String gender, Date dob, String nationality, String religion, String nativeCountry,
-                          String identityCharacteristics, Date dateOfIssue, Location locationHome) {
-        super();
-        this.idIdentity = idIdentity;
-        this.image = image;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.nickName = nickName;
-        this.gender = gender;
-        this.dob = dob;
-        this.nationality = nationality;
-        this.religion = religion;
-        this.nativeCountry = nativeCountry;
-        this.identityCharacteristics = identityCharacteristics;
-        this.dateOfIssue = dateOfIssue;
-        this.locationHome = locationHome;
-    }
+	public Identity() {
+		super();
+	}
+	
+	public Identity(int idIdentity, String image, String image2, String firstName, String lastName, String nickName,
+			String gender, Date dob, String nationality, String religion, String nativeCountry,
+			String identityCharacteristics, Date dateOfIssue) {
+		super();
+		this.idIdentity = idIdentity;
+		this.image = image;
+		this.image2 = image2;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.nickName = nickName;
+		this.gender = gender;
+		this.dob = dob;
+		this.nationality = nationality;
+		this.religion = religion;
+		this.nativeCountry = nativeCountry;
+		this.identityCharacteristics = identityCharacteristics;
+		this.dateOfIssue = dateOfIssue;
+	}
 
-    public int getIdIdentity() {
-        return idIdentity;
-    }
+	public String getImage2() {
+		return image2;
+	}
 
-    public void setIdIdentity(int idIdentity) {
-        this.idIdentity = idIdentity;
-    }
+	public void setImage2(String image2) {
+		this.image2 = image2;
+	}
 
-    public String getImage() {
-        return image;
-    }
+	public int getIdIdentity() {
+		return idIdentity;
+	}
 
-    public void setImage(String image) {
-        this.image = image;
-    }
+	public void setIdIdentity(int idIdentity) {
+		this.idIdentity = idIdentity;
+	}
 
-    public String getFirstName() {
-        return firstName;
-    }
+	public String getImage() {
+		return image;
+	}
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+	public void setImage(String image) {
+		this.image = image;
+	}
 
-    public String getLastName() {
-        return lastName;
-    }
+	public String getFirstName() {
+		return firstName;
+	}
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    public String getNickName() {
-        return nickName;
-    }
+	public String getLastName() {
+		return lastName;
+	}
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    public String getGender() {
-        return gender;
-    }
+	public String getNickName() {
+		return nickName;
+	}
 
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
 
-    public Date getDob() {
-        return dob;
-    }
+	public String getGender() {
+		return gender;
+	}
 
-    public void setDob(Date dob) {
-        this.dob = dob;
-    }
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
-    public String getNationality() {
-        return nationality;
-    }
+	public Date getDob() {
+		return dob;
+	}
 
-    public void setNationality(String nationality) {
-        this.nationality = nationality;
-    }
+	public void setDob(Date dob) {
+		this.dob = dob;
+	}
 
-    public String getReligion() {
-        return religion;
-    }
+	public String getNationality() {
+		return nationality;
+	}
 
-    public void setReligion(String religion) {
-        this.religion = religion;
-    }
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
 
-    public String getNativeCountry() {
-        return nativeCountry;
-    }
+	public String getReligion() {
+		return religion;
+	}
 
-    public void setNativeCountry(String nativeCountry) {
-        this.nativeCountry = nativeCountry;
-    }
+	public void setReligion(String religion) {
+		this.religion = religion;
+	}
 
-    public String getIdentityCharacteristics() {
-        return identityCharacteristics;
-    }
+	public String getNativeCountry() {
+		return nativeCountry;
+	}
 
-    public void setIdentityCharacteristics(String identityCharacteristics) {
-        this.identityCharacteristics = identityCharacteristics;
-    }
+	public void setNativeCountry(String nativeCountry) {
+		this.nativeCountry = nativeCountry;
+	}
 
-    public Date getDateOfIssue() {
-        return dateOfIssue;
-    }
+	public String getIdentityCharacteristics() {
+		return identityCharacteristics;
+	}
 
-    public void setDateOfIssue(Date dateOfIssue) {
-        this.dateOfIssue = dateOfIssue;
-    }
+	public void setIdentityCharacteristics(String identityCharacteristics) {
+		this.identityCharacteristics = identityCharacteristics;
+	}
 
-    public Location getLocationHome() {
-        return locationHome;
-    }
+	public Date getDateOfIssue() {
+		return dateOfIssue;
+	}
 
-    public void setLocationHome(Location locationHome) {
-        this.locationHome = locationHome;
-    }
+	public void setDateOfIssue(Date dateOfIssue) {
+		this.dateOfIssue = dateOfIssue;
+	}
 
-    @Override
-    public String toString() {
-        return "IdentityEntity [idIdentity=" + idIdentity + ", image=" + image + ", firstName=" + firstName
-                + ", lastName=" + lastName + ", nickName=" + nickName + ", gender=" + gender + ", dob=" + dob
-                + ", nationality=" + nationality + ", religion=" + religion + ", nativeCountry=" + nativeCountry
-                + ", identityCharacteristics=" + identityCharacteristics + ", dateOfIssue=" + dateOfIssue
-                + ", locationHome=" + locationHome + "]";
-    }
+	public Location getLocationHome() {
+		return locationHome;
+	}
 
+	public void setLocationHome(Location locationHome) {
+		this.locationHome = locationHome;
+	}
+
+	@Override
+	public String toString() {
+		return "IdentityEntity [idIdentity=" + idIdentity + ", image=" + image + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", nickName=" + nickName + ", gender=" + gender + ", dob=" + dob
+				+ ", nationality=" + nationality + ", religion=" + religion + ", nativeCountry=" + nativeCountry
+				+ ", identityCharacteristics=" + identityCharacteristics + ", dateOfIssue=" + dateOfIssue
+				+ ", locationHome=" + locationHome + "]";
+	}
 
 }

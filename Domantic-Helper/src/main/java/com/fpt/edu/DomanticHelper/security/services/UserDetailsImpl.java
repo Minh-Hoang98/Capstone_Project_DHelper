@@ -22,6 +22,8 @@ public class UserDetailsImpl implements UserDetails {
 
 	private String email;
 	
+	private String avatar;
+	
 	private String phone;
 
 	@JsonIgnore
@@ -29,13 +31,14 @@ public class UserDetailsImpl implements UserDetails {
 
 	private Collection<? extends GrantedAuthority> authorities;
 
-	public UserDetailsImpl(int id, String username,String phone, String email, String password,
+	public UserDetailsImpl(int id, String username,String phone, String email, String password, String avatar,
 			Collection<? extends GrantedAuthority> authorities) {
 		this.id = id;
 		this.username = username;
 		this.phone = phone;
 		this.email = email;
 		this.password = password;
+		this.avatar = avatar;
 		this.authorities = authorities;
 	}
 
@@ -50,7 +53,12 @@ public class UserDetailsImpl implements UserDetails {
 				user.getPhone(),
 				user.getEmail(),
 				user.getPassword(),
+				user.getAvatar(),
 				authorities);
+	}
+
+	public String getAvatar() {
+		return avatar;
 	}
 
 	@Override

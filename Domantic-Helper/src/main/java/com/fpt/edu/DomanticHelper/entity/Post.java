@@ -1,6 +1,7 @@
 package com.fpt.edu.DomanticHelper.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -10,7 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "post")
 public class Post {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
@@ -20,7 +21,8 @@ public class Post {
     @Column(name = "content", length = 255)
     private String content;
 
-    @Column(name = "image")
+    @Lob
+    @Column(name = "avatar", columnDefinition = "MEDIUMBLOB")
     private String image;
 
     @Column(name = "salary")
@@ -45,6 +47,15 @@ public class Post {
     @JoinColumn(name = "user_post")
     private User userPost;
 
+    @Column(name="type")
+    private int type;
+    
+    @OneToMany(mappedBy = "postApply", cascade = CascadeType.ALL)
+    private List<PostApply> postApply;
+    
+    @OneToMany(mappedBy = "postComment", cascade = CascadeType.ALL)
+    private List<PostComment> cmtPost;
+    
     public Post() {
         super();
     }

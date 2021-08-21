@@ -11,259 +11,224 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name = "helper_job")
 public class HelperJob {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id_helper")
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id_helper")
+	private int id;
 
-    @Column(name = "number_child", length = 50)
-    private int numberChild;
+	@Column(name = "number_child", length = 50)
+	private int numberChild;
 
-    @Column(name = "accommodation", length = 150)
-    private String accommodation;
+	@Column(name = "accommodation", length = 150)
+	private String accommodation;
 
-    @Column(name = "living_arrangement", length = 100)
-    private String livingArrangement;
+	@Column(name = "living_arrangement", length = 100)
+	private String livingArrangement;
 
-    @Column(name = "house_size")
-    private float houseSize;
+	@Column(name = "note", length = 255)
+	private String note;
 
-    @Column(name = "note", length = 255)
-    private String note;
+	@Column(name = "care", length = 100)
+	private String care;
 
-    @Column(name = "care", length = 100)
-    private String care;
+	@Column(name = "cooking", length = 100)
+	private String cooking;
 
-    @Column(name = "cooking", length = 100)
-    private String cooking;
+	@Column(name = "houseKeeping", length = 100)
+	private String houseKeeping;
 
-    @Column(name = "houseKeeping", length = 100)
-    private String houseKeeping;
+	@Column(name = "date_start")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date dateStart;
 
-    @Column(name = "date_start")
-    @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private Date dateStart;
+	@Column(name = "day_off")
+	private String dayOff;
 
-    @Column(name = "day_off")
-    private String dayOff;
+	@Column(name = "education_level", length = 50)
+	private String educationLevel;
 
-    @Column(name = "education_level", length = 50)
-    private String educationLevel;
+	@Column(name = "expected_monthly_salary")
+	private float expectedMonthlySalary;
 
-    @Column(name = "expected_monthly_salary")
-    private float expectedMonthlySalary;
+	@Column(name = "preferred_location", length = 50)
+	private String preferredLocation;
 
-    @Column(name = "preferred_location", length = 50)
-    private String preferredLocation;
+	@Column(name = "year_of_experience")
+	private int yearOfExperience;
 
-    @Column(name = "year_of_experience")
-    private int yearOfExperience;
+	@Column(name = "skills", length = 100)
+	private String skills;
 
-    @Column(name = "skills", length = 100)
-    private String skills;
+	@Column(name = "status")
+	private String status;
 
-    @Column(name = "status")
-    private String status;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "user_entity_helper", referencedColumnName = "id")
+	private User users_helper;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_entity_helper", referencedColumnName = "id")
-    private User users_helper;
+	public HelperJob() {
+		super();
+	}
 
-    // mappedBy trỏ tới tên biến helperJobs ở trong rate.
-    @ManyToMany(mappedBy = "helperJobs")
-    // LAZY để tránh việc truy xuất dữ liệu không cần thiết. Lúc nào cần thì mới query
-    private Collection<Rate> rates_helper;
+	public HelperJob(int id, int numberChild, String accommodation, String livingArrangement, String note, String care,
+			String cooking, String houseKeeping, Date dateStart, String dayOff, String educationLevel,
+			float expectedMonthlySalary, String preferredLocation, int yearOfExperience, String skills, String status,
+			User users_helper) {
+		super();
+		this.id = id;
+		this.numberChild = numberChild;
+		this.accommodation = accommodation;
+		this.livingArrangement = livingArrangement;
+		this.note = note;
+		this.care = care;
+		this.cooking = cooking;
+		this.houseKeeping = houseKeeping;
+		this.dateStart = dateStart;
+		this.dayOff = dayOff;
+		this.educationLevel = educationLevel;
+		this.expectedMonthlySalary = expectedMonthlySalary;
+		this.preferredLocation = preferredLocation;
+		this.yearOfExperience = yearOfExperience;
+		this.skills = skills;
+		this.status = status;
+		this.users_helper = users_helper;
+	}
 
-    public HelperJob() {
-        super();
-    }
+	public int getId() {
+		return id;
+	}
 
-    public HelperJob(int id, int numberChild, String accommodation, String livingArrangement,
-                     float houseSize, String note, String care, String cooking, String houseKeeping, Date dateStart,
-                     String dayOff, String educationLevel, float expectedMonthlySalary, String preferredLocation,
-                     int yearOfExperience, String skills, String status) {
-        super();
-        this.id = id;
-        this.numberChild = numberChild;
-        this.accommodation = accommodation;
-        this.livingArrangement = livingArrangement;
-        this.houseSize = houseSize;
-        this.note = note;
-        this.care = care;
-        this.cooking = cooking;
-        this.houseKeeping = houseKeeping;
-        this.dateStart = dateStart;
-        this.dayOff = dayOff;
-        this.educationLevel = educationLevel;
-        this.expectedMonthlySalary = expectedMonthlySalary;
-        this.preferredLocation = preferredLocation;
-        this.yearOfExperience = yearOfExperience;
-        this.skills = skills;
-        this.status = status;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public int getNumberChild() {
+		return numberChild;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public void setNumberChild(int numberChild) {
+		this.numberChild = numberChild;
+	}
 
-    public int getNumberChild() {
-        return numberChild;
-    }
+	public String getAccommodation() {
+		return accommodation;
+	}
 
-    public void setNumberChild(int numberChild) {
-        this.numberChild = numberChild;
-    }
+	public void setAccommodation(String accommodation) {
+		this.accommodation = accommodation;
+	}
 
-    public String getAccommodation() {
-        return accommodation;
-    }
+	public String getLivingArrangement() {
+		return livingArrangement;
+	}
 
-    public void setAccommodation(String accommodation) {
-        this.accommodation = accommodation;
-    }
+	public void setLivingArrangement(String livingArrangement) {
+		this.livingArrangement = livingArrangement;
+	}
 
-    public String getLivingArrangement() {
-        return livingArrangement;
-    }
+	public String getNote() {
+		return note;
+	}
 
-    public void setLivingArrangement(String livingArrangement) {
-        this.livingArrangement = livingArrangement;
-    }
+	public void setNote(String note) {
+		this.note = note;
+	}
 
-    public float getHouseSize() {
-        return houseSize;
-    }
+	public String getCare() {
+		return care;
+	}
 
-    public void setHouseSize(float houseSize) {
-        this.houseSize = houseSize;
-    }
+	public void setCare(String care) {
+		this.care = care;
+	}
 
-    public String getNote() {
-        return note;
-    }
+	public String getCooking() {
+		return cooking;
+	}
 
-    public void setNote(String note) {
-        this.note = note;
-    }
+	public void setCooking(String cooking) {
+		this.cooking = cooking;
+	}
 
-    public String getCare() {
-        return care;
-    }
+	public String getHouseKeeping() {
+		return houseKeeping;
+	}
 
-    public void setCare(String care) {
-        this.care = care;
-    }
+	public void setHouseKeeping(String houseKeeping) {
+		this.houseKeeping = houseKeeping;
+	}
 
-    public String getCooking() {
-        return cooking;
-    }
+	public Date getDateStart() {
+		return dateStart;
+	}
 
-    public void setCooking(String cooking) {
-        this.cooking = cooking;
-    }
+	public void setDateStart(Date dateStart) {
+		this.dateStart = dateStart;
+	}
 
-    public String getHouseKeeping() {
-        return houseKeeping;
-    }
+	public String getDayOff() {
+		return dayOff;
+	}
 
-    public void setHouseKeeping(String houseKeeping) {
-        this.houseKeeping = houseKeeping;
-    }
+	public void setDayOff(String dayOff) {
+		this.dayOff = dayOff;
+	}
 
-    public Date getDateStart() {
-        return dateStart;
-    }
+	public String getEducationLevel() {
+		return educationLevel;
+	}
 
-    public void setDateStart(Date dateStart) {
-        this.dateStart = dateStart;
-    }
+	public void setEducationLevel(String educationLevel) {
+		this.educationLevel = educationLevel;
+	}
 
-    public String getDayOff() {
-        return dayOff;
-    }
+	public float getExpectedMonthlySalary() {
+		return expectedMonthlySalary;
+	}
 
-    public void setDayOff(String dayOff) {
-        this.dayOff = dayOff;
-    }
+	public void setExpectedMonthlySalary(float expectedMonthlySalary) {
+		this.expectedMonthlySalary = expectedMonthlySalary;
+	}
 
-    public String getEducationLevel() {
-        return educationLevel;
-    }
+	public String getPreferredLocation() {
+		return preferredLocation;
+	}
 
-    public void setEducationLevel(String educationLevel) {
-        this.educationLevel = educationLevel;
-    }
+	public void setPreferredLocation(String preferredLocation) {
+		this.preferredLocation = preferredLocation;
+	}
 
-    public float getExpectedMonthlySalary() {
-        return expectedMonthlySalary;
-    }
+	public int getYearOfExperience() {
+		return yearOfExperience;
+	}
 
-    public void setExpectedMonthlySalary(float expectedMonthlySalary) {
-        this.expectedMonthlySalary = expectedMonthlySalary;
-    }
+	public void setYearOfExperience(int yearOfExperience) {
+		this.yearOfExperience = yearOfExperience;
+	}
 
-    public String getPreferredLocation() {
-        return preferredLocation;
-    }
+	public String getSkills() {
+		return skills;
+	}
 
-    public void setPreferredLocation(String preferredLocation) {
-        this.preferredLocation = preferredLocation;
-    }
+	public void setSkills(String skills) {
+		this.skills = skills;
+	}
 
-    public int getYearOfExperience() {
-        return yearOfExperience;
-    }
+	public String getStatus() {
+		return status;
+	}
 
-    public void setYearOfExperience(int yearOfExperience) {
-        this.yearOfExperience = yearOfExperience;
-    }
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
-    public String getSkills() {
-        return skills;
-    }
+	public User getUsers_helper() {
+		return users_helper;
+	}
 
-    public void setSkills(String skills) {
-        this.skills = skills;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public User getUsers_helper() {
-        return users_helper;
-    }
-
-    public void setUsers_helper(User users_helper) {
-        this.users_helper = users_helper;
-    }
-
-    public Collection<Rate> getRates_helper() {
-        return rates_helper;
-    }
-
-    public void setRates_helper(Collection<Rate> rates_helper) {
-        this.rates_helper = rates_helper;
-    }
-
-    @Override
-    public String toString() {
-        return "HelperJob [id=" + id + ", numberChild=" + numberChild + ", accommodation="
-                + accommodation + ", livingArrangement=" + livingArrangement + ", houseSize=" + houseSize + ", note="
-                + note + ", care=" + care + ", cooking=" + cooking + ", houseKeeping=" + houseKeeping + ", dateStart="
-                + dateStart + ", dayOff=" + dayOff + ", educationLevel=" + educationLevel + ", expectedMonthlySalary="
-                + expectedMonthlySalary + ", preferredLocation=" + preferredLocation + ", yearOfExperience="
-                + yearOfExperience + ", skills=" + skills + ", status=" + status + ", users_helper=" + users_helper
-                + ", rates_helper=" + rates_helper + "]";
-    }
+	public void setUsers_helper(User users_helper) {
+		this.users_helper = users_helper;
+	}
 
 }

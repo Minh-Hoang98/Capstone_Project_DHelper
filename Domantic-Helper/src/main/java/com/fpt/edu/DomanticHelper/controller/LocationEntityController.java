@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import com.fpt.edu.DomanticHelper.entity.Location;
 import com.fpt.edu.DomanticHelper.security.services.LocationEntityServiceImpl;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/location")
 public class LocationEntityController {

@@ -2,6 +2,7 @@ package com.fpt.edu.DomanticHelper.entity;
 
 
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,12 +14,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "employee")
 public class Employee {
 
-    @Id
+	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_emp")
     private int id;
@@ -50,11 +55,6 @@ public class Employee {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_entity_emp", referencedColumnName = "id")
     private User user_emp;
-
-    // mappedBy trỏ tới tên biến helperJobs ở trong rate.
-    @ManyToMany(mappedBy = "employees")
-    // LAZY để tránh việc truy xuất dữ liệu không cần thiết. Lúc nào cần thì mới query
-    private Collection<Rate> rates_emp;
 
     public Employee() {
         super();
@@ -153,22 +153,6 @@ public class Employee {
 
     public void setUser_emp(User user_emp) {
         this.user_emp = user_emp;
-    }
-
-    public Collection<Rate> getRates_emp() {
-        return rates_emp;
-    }
-
-    public void setRates_emp(Collection<Rate> rates_emp) {
-        this.rates_emp = rates_emp;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee [id=" + id + ", numberChild=" + numberChild + ", accommodation="
-                + accommodation + ", livingArrangement=" + livingArrangement + ", houseSize=" + houseSize + ", note="
-                + note + ", care=" + care + ", cooking=" + cooking + ", houseKeeping=" + houseKeeping + ", user_emp="
-                + user_emp + ", rates_emp=" + rates_emp + "]";
     }
 
 }
