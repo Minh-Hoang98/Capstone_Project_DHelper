@@ -23,14 +23,8 @@ public class Identity {
 	@Column(name = "image2", columnDefinition = "MEDIUMBLOB")
 	private String image2;
 
-	@Column(name = "first_name", nullable = false, length = 125)
-	private String firstName;
-
-	@Column(name = "last_name", nullable = false, length = 125)
-	private String lastName;
-
-	@Column(name = "nick_name", nullable = false, length = 125)
-	private String nickName;
+	@Column(name = "name", nullable = false, length = 125)
+	private String name;
 
 	@Column(name = "gender", nullable = false, length = 50)
 	private String gender;
@@ -45,9 +39,6 @@ public class Identity {
 
 	@Column(name = "religion", nullable = false, length = 125)
 	private String religion;
-
-	@Column(name = "native_country", nullable = false, length = 125)
-	private String nativeCountry;
 
 	@Column(name = "identity_characteristics", nullable = false, length = 125)
 	private String identityCharacteristics;
@@ -67,32 +58,23 @@ public class Identity {
 	public Identity() {
 		super();
 	}
-	
-	public Identity(int idIdentity, String image, String image2, String firstName, String lastName, String nickName,
-			String gender, Date dob, String nationality, String religion, String nativeCountry,
-			String identityCharacteristics, Date dateOfIssue) {
+
+	public Identity(int idIdentity, String image, String image2, String name, String gender, Date dob,
+			String nationality, String religion, String identityCharacteristics, Date dateOfIssue,
+			Location locationHome, User user) {
 		super();
 		this.idIdentity = idIdentity;
 		this.image = image;
 		this.image2 = image2;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.nickName = nickName;
+		this.name = name;
 		this.gender = gender;
 		this.dob = dob;
 		this.nationality = nationality;
 		this.religion = religion;
-		this.nativeCountry = nativeCountry;
 		this.identityCharacteristics = identityCharacteristics;
 		this.dateOfIssue = dateOfIssue;
-	}
-
-	public String getImage2() {
-		return image2;
-	}
-
-	public void setImage2(String image2) {
-		this.image2 = image2;
+		this.locationHome = locationHome;
+		this.user = user;
 	}
 
 	public int getIdIdentity() {
@@ -111,28 +93,20 @@ public class Identity {
 		this.image = image;
 	}
 
-	public String getFirstName() {
-		return firstName;
+	public String getImage2() {
+		return image2;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setImage2(String image2) {
+		this.image2 = image2;
 	}
 
-	public String getLastName() {
-		return lastName;
+	public String getName() {
+		return name;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getNickName() {
-		return nickName;
-	}
-
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getGender() {
@@ -167,14 +141,6 @@ public class Identity {
 		this.religion = religion;
 	}
 
-	public String getNativeCountry() {
-		return nativeCountry;
-	}
-
-	public void setNativeCountry(String nativeCountry) {
-		this.nativeCountry = nativeCountry;
-	}
-
 	public String getIdentityCharacteristics() {
 		return identityCharacteristics;
 	}
@@ -199,13 +165,12 @@ public class Identity {
 		this.locationHome = locationHome;
 	}
 
-	@Override
-	public String toString() {
-		return "IdentityEntity [idIdentity=" + idIdentity + ", image=" + image + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", nickName=" + nickName + ", gender=" + gender + ", dob=" + dob
-				+ ", nationality=" + nationality + ", religion=" + religion + ", nativeCountry=" + nativeCountry
-				+ ", identityCharacteristics=" + identityCharacteristics + ", dateOfIssue=" + dateOfIssue
-				+ ", locationHome=" + locationHome + "]";
+	public User getUser() {
+		return user;
 	}
 
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
 }
