@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.fpt.edu.DomanticHelper.jpa.LocationRepository;
 import com.fpt.edu.DomanticHelper.jpa.UserRepository;
 
 @Service
@@ -32,7 +31,6 @@ public class UserEntityServiceImpl {
     @Autowired
     private UserRepository userRepository;
     
-    private LocationRepository locationReponsitory;
 
     public List<User> findAllUser() {
         return userRepository.findAll();
