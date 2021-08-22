@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import com.fpt.edu.DomanticHelper.entity.Identity;
 import com.fpt.edu.DomanticHelper.entity.Location;
+import com.fpt.edu.DomanticHelper.entity.User;
 import com.fpt.edu.DomanticHelper.jpa.IdentityRepository;
 
 @Service
@@ -54,8 +55,18 @@ public class IdentityEntityServiceImpl {
         return theIdentity;
     }
 
-    public void save(Identity theUser) {
-        identityRepository.save(theUser);
+    public Identity add(Identity theIdentity) {
+    	theIdentity.setIdIdentity(0);
+        return identityRepository.save(theIdentity);
     }
+    
+    public void save(Identity theIdentity) {
+        identityRepository.save(theIdentity);
+    }
+    
+    public Identity updateIdentity(Identity identity) {   	
+        return identityRepository.save(identity);
+    }
+    
 
 }

@@ -28,6 +28,8 @@ import org.springframework.web.bind.annotation.RestController;
 import static com.fpt.edu.DomanticHelper.ObjectHelper.Common.*;
 import com.fpt.edu.DomanticHelper.entity.User;
 import com.fpt.edu.DomanticHelper.payload.request.UpdateProfileRequest;
+import com.fpt.edu.DomanticHelper.security.services.IdentityEntityServiceImpl;
+import com.fpt.edu.DomanticHelper.security.services.LocationEntityServiceImpl;
 import com.fpt.edu.DomanticHelper.security.services.UserEntityServiceImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -37,6 +39,12 @@ public class UserEntityController {
 
 	@Autowired
 	private UserEntityServiceImpl userEntityService;
+
+	@Autowired
+	private LocationEntityServiceImpl locationEntityService;
+
+	@Autowired
+	private IdentityEntityServiceImpl identityEntityService;
 
 	@GetMapping("/all")
 	public ResponseEntity<List<User>> getAllUser() {
@@ -50,37 +58,69 @@ public class UserEntityController {
 		return new ResponseEntity<>(user, HttpStatus.OK);
 	}
 
-	@PutMapping("/update")
-	public ResponseEntity<User> updateUser(@PathVariable("id") int id, @RequestBody UpdateProfileRequest user) {
-		User userService = userEntityService.findUserById(id);
-		if (userService != null) {
-			User newUser = new User();
-			Identity newIdentity = new Identity();
+	@PutMapping("/update/{id}")
+	public ResponseEntity<User> updateUser(@PathVariable("id") int id, @RequestBody UpdateProfileRequest userRequest) {
+		User oldUser = userEntityService.findUserById(id);
+		if (oldUser != null) {
 
-			Location queQuan = covertLocation(user.getQueQuan());
-			Location choO = covertLocation(user.getQueQuan());
+			Identity oldIdentity = oldUser.getIdentityEntity();
+			Location oldQueQuan = oldUser.getIdentityEntity().getLocationHome();
+			Location oldeChoO = oldUser.getCurrentLocation();
 
-			newUser.setAvatar(user.getAvatar());
-			newIdentity.setName(user.getName());
-			newIdentity.setGender(user.getGender());
-			newIdentity.setDob(user.getDob());
-			newIdentity.setLocationHome(covertLocation(user.getQueQuan()));
-			newIdentity.setNumberIdentity(user.getSoCmnd());
-			newIdentity.setDateOfIssue(user.getNgayCap());
-			newIdentity.setReligion(user.getNoiCap());
+			Location newqueQuan = covertLocation(userRequest.getQueQuan());
+			newqueQuan.setIdLocation(oldQueQuan.getIdLocation());
+			locationEntityService.updateLocation(newqueQuan);
 
-			newIdentity.setImage(user.getImage1());
-			newIdentity.setImage2(user.getImage2());
+			Location newChoO = covertLocation(userRequest.getQueQuan());
+			newChoO.setIdLocation(oldeChoO.getIdLocation());
+			locationEntityService.updateLocation(newChoO);
 
-			newUser.setHocVan(user.getHocvan());
-			newUser.setChuyenNganh(user.getChuyenNganh());
-			newUser.setCurrentLocation(covertLocation(user.getNoiO()));
+			oldIdentity.setName(userRequest.getName());
+			oldIdentity.setGender(userRequest.getGender());
+			oldIdentity.setDob(userRequest.getDob());
+			oldIdentity.setLocationHome(newqueQuan);
+			oldIdentity.setNumberIdentity(userRequest.getSoCmnd());
+			oldIdentity.setDateOfIssue(userRequest.getNgayCap());
+			oldIdentity.setReligion(userRequest.getNoiCap());
 
-			newUser.setIdentityEntity(newIdentity);
+			oldIdentity.setImage(userRequest.getImage1());
+			oldIdentity.setImage2(userRequest.getImage2());
 
+			oldUser.setAvatar(userRequest.getAvatar());
+			oldUser.setHocVan(userRequest.getHocvan());
+			oldUser.setChuyenNganh(userRequest.getChuyenNganh());
+			oldUser.setCurrentLocation(newChoO);
+
+			oldUser.setIdentityEntity(oldIdentity);
+
+			identityEntityService.updateIdentity(oldIdentity);
+			userEntityService.updateUser(oldUser);
+			return new ResponseEntity<>(oldUser, HttpStatus.OK);
+		}
+
+		return null;
+	}
+	
+	@PostMapping("/add/{id}")
+	public ResponseEntity<User> addUser(@PathVariable("id") int id, @RequestBody UpdateProfileRequest userRequest) {
+		User newUser = userEntityService.findUserById(id);
+		if (newUser != null) {
+			Location newqueQuan = covertLocation(userRequest.getQueQuan());			
+			locationEntityService.addLocationEntity(newqueQuan);
+
+			Location newChoO = covertLocation(userRequest.getQueQuan());
+			locationEntityService.addLocationEntity(newChoO);
+			Identity newIdentity = new Identity( userRequest.getSoCmnd(), userRequest.getImage1(), userRequest.getImage2(), userRequest.getName(), 
+					userRequest.getGender(), userRequest.getDob(), "Việt Nam","Không", "Nốt ruồi mắt trái", userRequest.getNgayCap(), newqueQuan, newUser);
+
+			newUser.setAvatar(userRequest.getAvatar());
+			newUser.setChuyenNganh(userRequest.getChuyenNganh());
+			newUser.setHocVan(userRequest.getHocvan());
+			identityEntityService.add(newIdentity);
 			userEntityService.updateUser(newUser);
 			return new ResponseEntity<>(newUser, HttpStatus.OK);
 		}
+
 		return null;
 	}
 }

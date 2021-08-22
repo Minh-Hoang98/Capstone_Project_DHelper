@@ -80,6 +80,25 @@ public class Identity {
 		this.locationHome = locationHome;
 		this.user = user;
 	}
+	
+	public Identity(String numberIdentity, String image, String image2, String name, String gender,
+			Date dob, String nationality, String religion, String identityCharacteristics, Date dateOfIssue,
+			Location locationHome, User user) {
+		super();
+	
+		this.numberIdentity = numberIdentity;
+		this.image = image;
+		this.image2 = image2;
+		this.name = name;
+		this.gender = gender;
+		this.dob = dob;
+		this.nationality = nationality;
+		this.religion = religion;
+		this.identityCharacteristics = identityCharacteristics;
+		this.dateOfIssue = dateOfIssue;
+		this.locationHome = locationHome;
+		this.user = user;
+	}
 
 	public Identity(int idIdentity, String image, String image2, String name, String gender, Date dob,
 			String nationality, String religion, String identityCharacteristics, Date dateOfIssue) {

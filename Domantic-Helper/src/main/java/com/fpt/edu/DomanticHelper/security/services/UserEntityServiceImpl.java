@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.fpt.edu.DomanticHelper.jpa.LocationRepository;
 import com.fpt.edu.DomanticHelper.jpa.UserRepository;
 
 @Service
@@ -30,6 +31,8 @@ public class UserEntityServiceImpl {
 
     @Autowired
     private UserRepository userRepository;
+    
+    private LocationRepository locationReponsitory;
 
     public List<User> findAllUser() {
         return userRepository.findAll();
@@ -40,12 +43,7 @@ public class UserEntityServiceImpl {
                 .orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
     }
 
-    public User addUserEntity(User userEntity) {
-        userEntity.setId(0);
-        return userRepository.save(userEntity);
-    }
-
-    public User updateUser(User user) {
+    public User updateUser(User user) {   	
         return userRepository.save(user);
     }
 
