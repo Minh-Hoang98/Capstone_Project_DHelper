@@ -43,8 +43,8 @@ public class PostController {
 		return new ResponseEntity<>(post, HttpStatus.OK);
 	}
 	
-	@PostMapping("/add/{id}")
-	public ResponseEntity<Post> addPost(@PathVariable("id") int id, @RequestBody FindJobRequest postRequest) {
+	@PostMapping("/addPostChuNha/{id}")
+	public ResponseEntity<Post> addPostChuNha(@PathVariable("id") int id, @RequestBody FindJobRequest postRequest) {
 		User oldUser = userEntityService.findUserById(id);
 		if (oldUser != null) {
 			
@@ -52,7 +52,24 @@ public class PostController {
 			locationEntityService.addLocationEntity(newAddress);
             
 			Post newPost = new Post(postRequest.getTitle(), postRequest.getContent(),Float.valueOf(postRequest.getSalary()), postRequest.getDateStart(),
-					postRequest.getStatus(), newAddress, oldUser, postRequest.getTypeJob());
+					postRequest.getStatus(), newAddress, oldUser, 1);
+			
+			postService.save(newPost);
+			return new ResponseEntity<>(newPost, HttpStatus.OK);
+		}
+		return null;
+	}
+	
+	@PostMapping("/addPostGiupViec/{id}")
+	public ResponseEntity<Post> addPostGiupViec(@PathVariable("id") int id, @RequestBody FindJobRequest postRequest) {
+		User oldUser = userEntityService.findUserById(id);
+		if (oldUser != null) {
+			
+			Location newAddress = covertLocation(postRequest.getAddress());			
+			locationEntityService.addLocationEntity(newAddress);
+            
+			Post newPost = new Post(postRequest.getTitle(), postRequest.getContent(),Float.valueOf(postRequest.getSalary()), postRequest.getDateStart(),
+					postRequest.getStatus(), newAddress, oldUser, 2);
 			
 			postService.save(newPost);
 			return new ResponseEntity<>(newPost, HttpStatus.OK);
